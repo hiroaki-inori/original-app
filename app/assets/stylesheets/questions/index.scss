@@ -23,7 +23,6 @@ li {
 /* 基本設定 */
 body {
   background: #f8f8f8;
-  margin: 0px;
 }
 
 a {
@@ -37,8 +36,9 @@ h2{
 
 #wrapper{
   width: 100vw;
+  min-height: 100vh; 
   margin: 0 auto;
-  text-align: center;
+  position: relative;
 }
 #intro{
   height: 500px;
