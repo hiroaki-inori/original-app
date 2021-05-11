@@ -13,6 +13,7 @@
 | gender_id          | integer | null: false               |
 | occupation_id      | integer | null: false               |
 | prof_image         | image   |                           |
+| position           | string  | null: false               |
 | pr                 | text    | null: false               |
 
 ### Association

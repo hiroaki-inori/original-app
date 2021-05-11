@@ -68,14 +68,10 @@ header{
   align-items: center;
   padding: 10px 15px;
 }
-.header-left{
-}
-.nav{
-}
 .nav ul{
   display: flex;
 }
-.nav ul li{
+.nav ul .login, .sign-up, .logout{
   padding: 4px 15px;
   margin-left: 8px;
   border: 1px solid #999;
@@ -88,4 +84,26 @@ footer{
   text-align: center;
   font-size:12px;
   padding: 30px 0;
+}
+
+/* 新規登録・ログイン */
+#devise{
+  background: #eee;
+  width: 400px;
+  margin: 20px auto;
+}
+#devise h2{
+  text-align: center;
+}
+#devise .submit{
+  text-align: center;
+  margin: 20px auto;
+}
+#devise .submit-btn{
+  width: 200px;
+  color: #fff;
+  background: cornflowerblue;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
 }
