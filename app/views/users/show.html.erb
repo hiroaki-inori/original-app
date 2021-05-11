@@ -1,0 +1,23 @@
+<div id="user-prof">
+  <h2>ユーザー情報</h2>
+  <div class="prof-top">
+    <div class="image">
+      <%= image_tag @user.prof_image %>
+    </div>
+    <div class="text">
+      <p class="position"><%= @user.position %></p>
+      <p>ニックネーム：<%= @user.nickname %></p>
+      <p>年齢：<%= @user.age[:name] %></p>
+      <p>性別：<%= @user.gender[:name] %></p>
+      <p>職業：<%= @user.occupation[:name] %></p>
+    </div>
+  </div>
+  <div class="pr">
+    <p class="title">自己紹介</p>
+    <%= @user.pr %>
+  </div>
+  <div class="archive">
+    <p class="title">これまでに添削した相談</p>
+  </div>
+</div>
+
