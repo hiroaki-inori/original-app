@@ -1,3 +1,4 @@
+<div id="main">
   <div id ="intro" class="container">
     <h2>サイトについて</h2>
     <p>このアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリは</p>
@@ -8,4 +9,13 @@
   </div>
   <div id ="show" class="container">
     <h2>投稿一覧</h2>
+    <%= link_to 'メッセージを添削してもらう', new_question_path, id:"new-question" %>
+    <div id="question-table">
+      <% @questions.each do |question| %>
+        <div class="item">
+          <p class="title"><%= link_to "#{question.title}", question_path(question.id) %></p>
+        </div>
+      <% end %>
+    </div>
   </div>
+</div>

@@ -24,6 +24,7 @@ class User < ApplicationRecord
   end
 
   has_one_attached :prof_image
+  has_many :questions
   belongs_to :age
   belongs_to :gender
   belongs_to :occupation

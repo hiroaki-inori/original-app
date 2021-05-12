@@ -1,0 +1,28 @@
+<div id="q-tensaku">
+  <div class="column-left">
+    <div class="title">
+      <%= @question.title %>
+    </div>
+    <div class="user">
+      <p><%= image_tag @question.user.prof_image %></p>
+      <p>相談者：<%= @question.user.nickname %>さん</p>
+      <% if user_signed_in? && current_user.id == @question.user_id %>
+      相談内容を編集する
+      <% end %>
+    </div>
+    <p class="headline">相談概要</p>
+    <div class="outline">
+      <%= @question.outline %>
+    </div>
+  </div>
+  <div class="column-center">
+    <p class="headline">LINE・メールの現状</p>
+    <div class="content">
+      <%= @question.content %>
+    </div>
+  </div>
+  <div class="column-right">
+    <p class="headline">みんなの添削コメント</p>
+    <div class="comment">aaaaaa</div>
+  </div>
+</div>
