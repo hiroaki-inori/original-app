@@ -23,6 +23,19 @@
   </div>
   <div class="column-right">
     <p class="headline">みんなの添削コメント</p>
-    <div class="comment">aaaaaa</div>
+    <div id="comments">
+      <% @comments.reverse_each do |comment| %>
+      <p><%= image_tag comment.user.prof_image %> <%= comment.text %></p>
+      <% end %>
+    </div>
+    <div id="comment-submit">
+    <%= form_with(model: [@question, @comment], local: true) do |f| %>
+      <%= f.text_area :text, class:"comment-text" %>
+      <button type="submit" class="comment-btn">
+        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+        <span>コメントする<span>
+      </button>
+    <% end %>
+    </div>
   </div>
 </div>
