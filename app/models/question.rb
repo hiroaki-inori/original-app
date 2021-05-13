@@ -3,11 +3,6 @@ class Question < ApplicationRecord
   belongs_to :user
   has_many :comments
   belongs_to :category
+  has_many :messages
 
-  with_options presence: true do
-    validates :title
-    validates :category_id
-    validates :outline
-    validates :content
-  end
 end

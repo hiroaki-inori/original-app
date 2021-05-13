@@ -5,13 +5,14 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    @question_message = QuestionMessage.new
   end
 
   def create
-    @question = Question.create(question_params)
-    if @question.save
-      redirect_to root_path      
+    @question_message = QuestionMessage.new(question_params)
+    if @question_message.valid?
+       @question_message.save
+       redirect_to root_path
     else
       render :new
     end 
@@ -32,7 +33,7 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:title, :category_id, :outline, :content).merge(user_id: current_user.id)
+    params.require(:question_message).permit(:title, :category_id, :outline, :who_id, :sentence, :content).merge(user_id: current_user.id)
   end
 
 end

@@ -36,6 +36,21 @@
 
 - belongs_to :user
 - has_many :comments
+- has_one :mail
+
+
+## messages テーブル
+
+| Column     | Type       | Options                        |
+| -------    | -------    | -----------                    |
+| who_id     | integer    | null: false                    |
+| sentence   | text       | null: false                    |
+| question   | references | null: false, foreign_key: true |
+
+
+### Association
+
+- belongs_to :question
 
 
 ## comments テーブル
