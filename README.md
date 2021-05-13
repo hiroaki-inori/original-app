@@ -24,12 +24,13 @@
 
 ## questions テーブル
 
-| Column   | Type       | Options                        |
-| ------   | ------     | -----------                    |
-| title    | string     | null: false                    |
-| outline  | text       | null: false                    |
-| content  | text       | null: false                    |
-| user     | references | null: false, foreign_key: true |
+| Column       | Type       | Options                        |
+| ------       | ------     | -----------                    |
+| title        | string     | null: false                    |
+| outline      | text       | null: false                    |
+| content      | text       | null: false                    |
+| category_id  | integer    | null: false                    |
+| user         | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -49,4 +50,4 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :item
+- belongs_to :question

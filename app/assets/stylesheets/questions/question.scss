@@ -1,0 +1,74 @@
+/* 質問投稿画面(new.html) */
+#new-question{
+  display: block;
+  background: red;
+  color: white;
+  width: 300px;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+#new-question:hover{
+  background: blue;
+}
+#question-table{
+  width: 800px;
+  display: flex;
+  justify-content: start;
+  margin: 20px auto;
+  /* background: #ccc; */
+}
+
+#question-table .item{
+  background-image: image-url("nayami.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  width: 300px;
+  height: 250px;
+  text-align: left;
+  padding: 5px;
+  margin: 0 8px;
+}
+#question-table .item .title{
+  background: #FFFFCC;
+  padding: 8px;
+  border-radius: 7px;
+}
+
+/* 添削画面(show.html) */
+#q-tensaku{
+  display: flex;
+  width: 1030px;
+  margin: 20px auto;
+}
+#q-tensaku .column-left{
+  width:250px;
+  background: #eee;
+}
+#q-tensaku .title{
+  text-align: left;
+  margin-bottom: 10px;
+}
+#q-tensaku .user{
+  text-align: center;
+}
+#q-tensaku .user img{
+	width:170px;
+	height:170px;
+	object-fit:cover;
+	border-radius:50%;
+  object-position:50% 10%;
+}
+#q-tensaku .outline{
+  text-align: left;
+}
+#q-tensaku .column-center{
+  width:450px;
+  background: #ccc;
+  margin: 0 15px 0 15px;
+}
+#q-tensaku .column-right{
+  width: 300px;
+  background: #999;
+}

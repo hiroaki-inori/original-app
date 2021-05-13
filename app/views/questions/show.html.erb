@@ -1,0 +1,41 @@
+<div id="q-tensaku">
+  <div class="column-left">
+    <div class="title">
+      <%= @question.title %>
+    </div>
+    <div class="user">
+      <p><%= image_tag @question.user.prof_image %></p>
+      <p>相談者：<%= @question.user.nickname %>さん</p>
+      <% if user_signed_in? && current_user.id == @question.user_id %>
+      相談内容を編集する
+      <% end %>
+    </div>
+    <p class="headline">相談概要</p>
+    <div class="outline">
+      <%= @question.outline %>
+    </div>
+  </div>
+  <div class="column-center">
+    <p class="headline">LINE・メールの現状</p>
+    <div class="content">
+      <%= @question.content %>
+    </div>
+  </div>
+  <div class="column-right">
+    <p class="headline">みんなの添削コメント</p>
+    <div id="comments">
+      <% @comments.reverse_each do |comment| %>
+      <p><%= image_tag comment.user.prof_image %> <%= comment.text %></p>
+      <% end %>
+    </div>
+    <div id="comment-submit">
+    <%= form_with(model: [@question, @comment], local: true) do |f| %>
+      <%= f.text_area :text, class:"comment-text" %>
+      <button type="submit" class="comment-btn">
+        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+        <span>コメントする<span>
+      </button>
+    <% end %>
+    </div>
+  </div>
+</div>

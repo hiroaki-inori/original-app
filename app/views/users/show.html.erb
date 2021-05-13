@@ -16,8 +16,16 @@
     <p class="title">自己紹介</p>
     <%= @user.pr %>
   </div>
+  <div class="now-question">
+    <p class="title">現在相談中の内容</p>
+  </div>
   <div class="archive">
     <p class="title">これまでに添削した相談</p>
   </div>
 </div>
+
+<%= link_to 'プロフィールを編集する', edit_user_registration_path, id:"prof-edit" %>
+<%= link_to '退会する', root_path, id:"prof-destroy" %>
+
+
 

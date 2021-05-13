@@ -38,7 +38,13 @@ h2{
   width: 100vw;
   min-height: 100vh; 
   margin: 0 auto;
+  text-align: center;
   position: relative;
+  padding-bottom: 100px;
+}
+#main{
+  margin: 0 auto;
+  text-align: center;
 }
 #intro{
   height: 500px;
@@ -54,10 +60,18 @@ h2{
   background-color: cornflowerblue;
 }
 #show{
-  background-color: #eee;
+  background-color: #fff;
 }
 .container{
   padding: 30px 0 100px;
+}
+
+/* 見出し */
+.headline{
+  color: white;
+  background: brown;
+  padding: 7px;
+  margin-bottom: 10px;
 }
 
 /* ヘッダー */
@@ -89,53 +103,7 @@ footer{
   padding: 30px 0;
 }
 
-/* 新規登録・ログイン */
-#devise{
-  background: #eee;
-  width: 400px;
-  margin: 20px auto;
-}
-#devise h2{
-  text-align: center;
-}
-#devise .submit{
-  text-align: center;
-  margin: 20px auto;
-}
-#devise .submit-btn{
-  width: 200px;
-  color: #fff;
-  background: cornflowerblue;
-  padding: 10px;
-  border: none;
-  font-weight: bold;
-}
 
-/* ユーザー情報 */
-#user-prof{
-  margin: 20px auto;
-  width: 600px;
-}
-#user-prof .prof-top{
-  display: flex;
-  justify-content: space-between;
-}
-#user-prof .prof-top .position{
-  font-size:20px;
-  margin-bottom: 10px;
-}
-#user-prof .prof-top .image{
-}
-#user-prof .prof-top .text{
-  width: calc(100% - 200px);
-}
-#user-prof .prof-top .image img{
-	width:170px;
-	height:170px;
-	object-fit:cover;
-	border-radius:50%;
-  object-position:50% 10%;
-}
-#user-prof .pr{
-  margin-bottom: 20px;
-}
+
+
+
