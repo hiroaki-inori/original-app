@@ -11,7 +11,7 @@
     <h2>投稿一覧</h2>
     <%= link_to 'メッセージを添削してもらう', new_question_path, id:"new-question" %>
     <div id="question-table">
-      <% @questions.each do |question| %>
+      <% @questions.reverse_each do |question| %>
         <div class="item">
           <p class="title"><%= link_to "#{question.title}", question_path(question.id) %></p>
         </div>
