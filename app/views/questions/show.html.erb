@@ -17,8 +17,10 @@
   </div>
   <div class="column-center">
     <p class="headline">LINE・メールの現状</p>
-    <div class="content">
-      <%= @question.content %>
+    <div class="sentence">
+      <% @messages.each do |message| %>
+        <p class="sentence-<%= message.who_id %>"><%= message.sentence %></p>
+      <% end %>
     </div>
   </div>
   <div class="column-right">

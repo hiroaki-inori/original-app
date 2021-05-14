@@ -21,6 +21,21 @@
         <%= f.text_area :content, autofocus: true %>
       </div>
 
+      <!-- LINE文入力フィールド -->
+      <%= f.fields_for :messages do |t| %>
+      <%= render "message_fields", f: t %>
+      <% end %>
+
+      <!-- 追加する場所 -->
+      <div id="detail-association-insertion-point"></div>
+
+      <!-- 追加ボタン -->
+      <%= link_to_add_association "追加", f, :messages, 
+          data: {
+          association_insertion_node: '#detail-association-insertion-point',
+          association_insertion_method: 'before'
+          } %>
+
       <div class="submit">
         <%= f.submit "送信", class:"submit-btn" %>
       </div>

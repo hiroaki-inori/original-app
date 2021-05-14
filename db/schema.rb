@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_12_061247) do
+ActiveRecord::Schema.define(version: 2021_05_13_054601) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2021_05_12_061247) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_comments_on_question_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "who_id", null: false
+    t.text "sentence", null: false
+    t.bigint "question_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_messages_on_question_id"
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,5 +84,6 @@ ActiveRecord::Schema.define(version: 2021_05_12_061247) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "questions"
   add_foreign_key "comments", "users"
+  add_foreign_key "messages", "questions"
   add_foreign_key "questions", "users"
 end

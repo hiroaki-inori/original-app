@@ -3,6 +3,8 @@ class Question < ApplicationRecord
   belongs_to :user
   has_many :comments
   belongs_to :category
+  has_many :messages, dependent: :destroy
+  accepts_nested_attributes_for :messages, allow_destroy: true
 
   with_options presence: true do
     validates :title

@@ -1,0 +1,5 @@
+<div>
+<%= f.collection_select(:who_id, Who.all, :id, :name, {}) %>
+<%= f.text_area :sentence %>
+<%= link_to_remove_association "削除", f %>
+</div>

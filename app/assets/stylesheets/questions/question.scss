@@ -15,6 +15,7 @@
   width: 800px;
   display: flex;
   justify-content: start;
+  flex-wrap:wrap;
   margin: 20px auto;
   /* background: #ccc; */
 }
@@ -24,7 +25,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
-  width: 300px;
+  width: 250px;
   height: 250px;
   text-align: left;
   padding: 5px;
@@ -65,8 +66,31 @@
 }
 #q-tensaku .column-center{
   width:450px;
-  background: #ccc;
+  background-image: image-url("line_bg.jpeg");
   margin: 0 15px 0 15px;
+}
+#q-tensaku .sentence{
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+}
+#q-tensaku .sentence-1{
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  width: 300px;
+  color:blue;
+  text-align: left;
+  margin:0 auto 20px auto;
+}
+#q-tensaku .sentence-2{
+  color:red;
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: right;
+  margin:0 auto 20px auto;
 }
 #q-tensaku .column-right{
   width: 300px;

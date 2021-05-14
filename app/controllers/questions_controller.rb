@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    @messages = @question.messages.build
   end
 
   def create
@@ -19,6 +20,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @messages = @question.messages.includes(:question)
     @comments = @question.comments.includes(:user)
     @comment = Comment.new
   end
@@ -32,7 +34,7 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:title, :category_id, :outline, :content).merge(user_id: current_user.id)
+    params.require(:question).permit(:title, :category_id, :outline, :content, messages_attributes:[:id, :who_id, :sentence, :_destroy]).merge(user_id: current_user.id)
   end
 
 end
