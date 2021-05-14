@@ -28,7 +28,6 @@
 | ------       | ------     | -----------                    |
 | title        | string     | null: false                    |
 | outline      | text       | null: false                    |
-| content      | text       | null: false                    |
 | category_id  | integer    | null: false                    |
 | user         | references | null: false, foreign_key: true |
 
@@ -50,4 +49,19 @@
 ### Association
 
 - belongs_to :user
+- belongs_to :question
+
+
+
+## messages テーブル
+
+| Column          | Type       | Options                        |
+| -------         | -------    | -----------                    |
+| who_id          | integer    | null: false                    |
+| sentence        | text       | null: false                    |
+| question        | references | null: false, foreign_key: true |
+
+
+### Association
+
 - belongs_to :question

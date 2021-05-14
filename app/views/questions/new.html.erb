@@ -16,11 +16,6 @@
         <%= f.text_area :outline, autofocus: true %>
       </div>
 
-      <div class="field">
-        <label class="form-text">LINE・メールの現状</label>
-        <%= f.text_area :content, autofocus: true %>
-      </div>
-
       <!-- LINE文入力フィールド -->
       <%= f.fields_for :messages do |t| %>
       <%= render "message_fields", f: t %>

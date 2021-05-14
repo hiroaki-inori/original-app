@@ -23,9 +23,9 @@ class User < ApplicationRecord
     validates :occupation_id
   end
 
-  has_one_attached :prof_image
-  has_many :questions
-  has_many :comments
+  has_one_attached :prof_image, dependent: :destroy
+  has_many :questions, dependent: :destroy
+  has_many :comments, dependent: :destroy
   belongs_to :age
   belongs_to :gender
   belongs_to :occupation
