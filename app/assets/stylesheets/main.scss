@@ -1,0 +1,107 @@
+/* リセットCSS */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+
+/* 基本設定 */
+body {
+  background: #f8f8f8;
+}
+
+a {
+  text-decoration: none;
+}
+h2{
+  margin-bottom: 15px;
+}
+
+/* 全体構造 */
+
+#wrapper{
+  width: 100vw;
+  min-height: 100vh; 
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  padding-bottom: 80px;
+}
+#main{
+  margin: 0 auto;
+  text-align: center;
+}
+#intro{
+  height: 500px;
+  background-image: image-url("top_image.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right top;
+  text-align: left;
+  padding:40px 430px 0 40px;
+  font-size: 22px;
+}
+#use{
+  background-color: cornflowerblue;
+}
+#show{
+  background-color: #fff;
+  background-image: image-url("4721648_m.jpg");
+}
+.container{
+  padding: 30px 0 100px;
+}
+
+/* 見出し */
+.headline{
+  color: white;
+  background: brown;
+  padding: 7px;
+  margin-bottom: 10px;
+}
+
+/* ヘッダー */
+header{
+  background-color:#FFD700;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+.nav ul{
+  display: flex;
+}
+.nav ul .login, .sign-up, .logout{
+  padding: 4px 15px;
+  margin-left: 8px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+/* フッター */
+footer{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  background-color:#ccc;
+  font-size:12px;
+}
