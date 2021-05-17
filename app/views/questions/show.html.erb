@@ -27,7 +27,7 @@
     <p class="headline">みんなの添削コメント</p>
     <div id="comments">
       <% @comments.reverse_each do |comment| %>
-      <p><%= image_tag comment.user.prof_image %> <%= comment.text %></p>
+      <p><%= image_tag comment.user.prof_image %> <%= comment.text %> <div class="buttons_<%= comment.id %>"><%= render partial: 'likes/like', locals: { comment: comment }%><%= @like_count %></div></p>
       <% end %>
     </div>
     <div id="comment-submit">

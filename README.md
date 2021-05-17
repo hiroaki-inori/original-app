@@ -20,6 +20,7 @@
 
 - has_many :questions
 - has_many :comments
+- has_many :likes
 
 
 ## questions テーブル
@@ -50,6 +51,7 @@
 
 - belongs_to :user
 - belongs_to :question
+- has_many :likes
 
 
 
@@ -65,3 +67,17 @@
 ### Association
 
 - belongs_to :question
+
+
+
+## likes テーブル
+
+| Column      | Type       | Options                        |
+| -------     | -------    | -----------                    |
+| comment     | references | null: false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :comment
+- belongs_to :user

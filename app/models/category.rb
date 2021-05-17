@@ -4,7 +4,7 @@ class Category < ActiveHash::Base
     { id: 2, name: '仕事' },
     { id: 3, name: '友人' },
     { id: 4, name: '恋愛' },
-    { id: 5, name: 'その他' },
+    { id: 5, name: 'その他' }
   ]
 
   include ActiveHash::Associations

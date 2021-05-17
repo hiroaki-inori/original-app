@@ -13,10 +13,10 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.create(question_params)
     if @question.save
-      redirect_to root_path      
+      redirect_to root_path
     else
       render :new
-    end 
+    end
   end
 
   def show
@@ -32,10 +32,10 @@ class QuestionsController < ApplicationController
   def update
   end
 
-
   private
-  def question_params
-    params.require(:question).permit(:title, :category_id, :outline, messages_attributes:[:id, :who_id, :sentence, :_destroy]).merge(user_id: current_user.id)
-  end
 
+  def question_params
+    params.require(:question).permit(:title, :category_id, :outline,
+                                     messages_attributes: [:id, :who_id, :sentence, :_destroy]).merge(user_id: current_user.id)
+  end
 end

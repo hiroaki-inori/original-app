@@ -4,9 +4,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
-  validates :password,  format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
-       
+
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+
   with_options presence: true do
     validates :nickname
     validates :age_id
@@ -24,8 +24,9 @@ class User < ApplicationRecord
   end
 
   has_one_attached :prof_image, dependent: :destroy
-  has_many :questions, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :questions
+  has_many :comments
+  has_many :likes
   belongs_to :age
   belongs_to :gender
   belongs_to :occupation

@@ -1,0 +1,4 @@
+<div class="like_button">
+  <%= link_to "いいね", question_comment_likes_path(question_id: @question.id, comment_id: comment.id), {method: "post"} %>
+  <p><% @like_count %></p>
+</div>
