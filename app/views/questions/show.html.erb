@@ -27,7 +27,12 @@
     <p class="headline">みんなの添削コメント</p>
     <div id="comments">
       <% @comments.reverse_each do |comment| %>
-      <p><%= image_tag comment.user.prof_image %> <%= comment.text %></p>
+      <p>
+        <%= image_tag comment.user.prof_image %> <%= comment.text %>
+        <span id="comment_<%= comment.id %>">
+          <%= render 'comment_likes/comment_like', comment: comment %>
+        </span>
+      </p>
       <% end %>
     </div>
     <div id="comment-submit">

@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update]
+
+  post 'comment_like/:id' => 'comment_likes#create', as: 'create_comment_like'
+  delete 'comment_like/:id' => 'comment_likes#destroy', as: 'destroy_comment_like'
 end
