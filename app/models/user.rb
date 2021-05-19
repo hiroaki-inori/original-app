@@ -26,7 +26,12 @@ class User < ApplicationRecord
   has_one_attached :prof_image, dependent: :destroy
   has_many :questions, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :comment_likes
   belongs_to :age
   belongs_to :gender
   belongs_to :occupation
+
+  def liked_by?(comment_id)
+    comment_likes.where(comment_id: comment_id).exists?
+  end
 end

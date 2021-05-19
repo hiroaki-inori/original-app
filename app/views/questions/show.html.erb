@@ -27,7 +27,14 @@
     <p class="headline">みんなの添削コメント</p>
     <div id="comments">
       <% @comments.reverse_each do |comment| %>
-      <p><%= image_tag comment.user.prof_image %> <%= comment.text %></p>
+      <p>
+        <%= image_tag comment.user.prof_image %> <%= comment.text %>
+        <% if current_user.liked_by?(comment.id) %>
+          <span><%= link_to 'いいねを外す', destroy_comment_like_path(comment), method: :DELETE %><%= comment.comment_likes.count %></span>
+        <% else %>
+          <span><%= link_to 'いいね', create_comment_like_path(comment), method: :POST %><%= comment.comment_likes.count %></span>
+        <% end %>
+      </p>
       <% end %>
     </div>
     <div id="comment-submit">
