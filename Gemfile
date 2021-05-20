@@ -61,3 +61,6 @@ gem 'pry-rails'
 
 gem 'jquery-rails'
 gem 'cocoon'
+
+# いいね機能のアイコン
+gem 'font-awesome-sass'
