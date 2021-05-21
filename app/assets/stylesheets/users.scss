@@ -1,13 +1,18 @@
 /* ユーザー情報 */
 
 #user-prof{
-  margin: 20px auto;
   width: 600px;
   text-align: left;
+}
+#user-prof h2{
+  text-align: center;
+  width: 300px;
+  margin: 0 auto 30px auto;
 }
 #user-prof .prof-top{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 #user-prof .prof-top .position{
   font-size:20px;
@@ -25,7 +30,20 @@
 }
 #user-prof .pr{
   margin-bottom: 20px;
+} 
+#user-prof .title{
+  font-size:16px;
+  font-weight: bold;
+  color: #DD0000;
+  background:linear-gradient(transparent 60%, #ffffbc 0%) ;
+  margin-bottom: 10px;
 }
+#user-prof .text-box{
+  margin-bottom: 30px;
+}
+
+
+
 #prof-edit{
   display: block;
   width: 300px;
@@ -42,5 +60,5 @@
   color: black;
   background: burlywood;
   border-radius: 8px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
 }

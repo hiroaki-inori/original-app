@@ -1,15 +1,20 @@
 /* 新規登録・ログイン */
 #devise{
-  background: #eee;
-  width: 400px;
-  margin: 20px auto;
+  width: 600px;
 }
 #devise h2{
   text-align: center;
 }
+#devise .indispensable{
+  color: white;
+  background-color: red;
+  padding: 4px;
+  margin: 3px 8px;
+  font-size: 75%;
+}
 #devise .submit{
   text-align: center;
-  margin: 20px auto;
+  margin: 30px auto 0px;
 }
 #devise .submit-btn{
   width: 200px;
@@ -18,4 +23,24 @@
   padding: 10px;
   border: none;
   font-weight: bold;
+}
+.f_form{
+  width: 100%;
+  padding: 4px;
+}
+.f_tarea{
+  width: calc(100% - 200px);
+  height: 140px;
+}
+.select-box{
+  width: 150px;
+  padding: 4px;
+}
+.minimam_pass{
+  font-size: 11px;
+}
+.click-upload{
+  width: calc(100% - 200px);
+  text-align: left;
+  padding-bottom: 15px;
 }

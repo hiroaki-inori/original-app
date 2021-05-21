@@ -1,4 +1,5 @@
-/* リセットCSS */
+/* === リセットCSS ========================================== */
+
 * {
   box-sizing: border-box;
 }
@@ -19,10 +20,10 @@ li {
   list-style: none;
 }
 
+/* === 基本設定 ========================================== */
 
-/* 基本設定 */
 body {
-  background: #f8f8f8;
+  background: #eee;
 }
 
 a {
@@ -30,10 +31,18 @@ a {
 }
 h2{
   margin-bottom: 15px;
+  color: #DD0000;  
 }
 
-/* 全体構造 */
+/* 見出しにアンダーライン */
+.under-line{
+  background:linear-gradient(transparent 60%, #ffffbc 0%) ;
+}
 
+
+/* === 全体構造 ========================================== */
+
+/* カラム */
 #wrapper{
   width: 100vw;
   min-height: 100vh; 
@@ -48,6 +57,7 @@ h2{
 }
 #intro{
   height: 500px;
+  color: #DD0000;
   background-image: image-url("top_image.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -57,7 +67,11 @@ h2{
   font-size: 22px;
 }
 #use{
-  background-color: cornflowerblue;
+  color: #fff;
+  background-color:#DD0000;
+}
+#use h2{
+  color: #fff;
 }
 #show{
   background-color: #fff;
@@ -76,25 +90,65 @@ h2{
   margin-bottom: 10px;
 }
 
-/* ヘッダー */
+/* 基本ボックス */
+.box{
+  background-color: white;
+  padding: 30px 40px;
+  margin: 30px auto;
+}
+
+/* 基本入力フォーム */
+.field{
+  display: flex;
+  margin-bottom: 10px;
+  width: 100%;
+  align-items: baseline;
+}
+.label{
+  background: #FAEBD7;
+  width: 190px;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: left;
+  font-size: 90%;
+  margin-right: 10px;
+}
+.form{
+  width: calc(100% - 200px);
+}
+
+/* === ヘッダー ========================================== */
+
 header{
-  background-color:#FFD700;
   display: flex;
   justify-content:space-between;
   align-items: center;
   padding: 10px 15px;
 }
+header a{
+  color:#DD0000;
+}
 .nav ul{
   display: flex;
 }
 .nav ul .login, .sign-up, .logout{
-  padding: 4px 15px;
+  background: #DD0000;
+  padding: 7px 15px;
   margin-left: 8px;
-  border: 1px solid #999;
   border-radius: 3px;
+  font-weight: bold;
+}
+.nav li a .login, .sign-up, .logout{
+  color: white;
+}
+.nav li .user-nickname{
+  color:#DD0000;
 }
 
-/* フッター */
+
+/* === フッター ========================================== */
+
 footer{
   position: absolute;
   bottom: 0;
@@ -103,6 +157,7 @@ footer{
   justify-content: center;
   width: 100%;
   height: 80px;
-  background-color:#ccc;
+  background-color:#DD0000;
+  color: #fff;
   font-size:12px;
 }

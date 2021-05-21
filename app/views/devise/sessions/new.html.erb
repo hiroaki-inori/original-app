@@ -1,15 +1,15 @@
-<div id="devise">
+<div id="devise" class="box">
   <h2>ログイン</h2>
 
   <%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
     <div class="field">
-      <label class="form-text">メールアドレス</label>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="label"><label class="form-text">メールアドレス</label></div>
+      <div class="form"><%= f.email_field :email, autofocus: true, autocomplete: "email", class:"f_form" %></div>
     </div>
 
     <div class="field">
-      <label class="form-text">パスワード</label>
-      <%= f.password_field :password, autocomplete: "current-password" %>
+      <div class="label"><label class="form-text">パスワード</label></div>
+      <div class="form"><%= f.password_field :password, autocomplete: "current-password", class:"f_form" %></div>
     </div>
 
     <% if devise_mapping.rememberable? %>

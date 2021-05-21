@@ -1,5 +1,5 @@
-<div id="user-prof">
-  <h2>ユーザー情報</h2>
+<div id="user-prof" class="box">
+  <h2 class="under-line">ユーザー情報</h2>
   <div class="prof-top">
     <div class="image">
       <%= image_tag @user.prof_image %>
@@ -13,14 +13,14 @@
       <p>獲得ポイント：<%= @like_count %> pt</p>
     </div>
   </div>
-  <div class="pr">
+  <div class="pr text-box">
     <p class="title">自己紹介</p>
     <%= @user.pr %>
   </div>
-  <div class="now-question">
+  <div class="now-question text-box">
     <p class="title">現在相談中の内容</p>
   </div>
-  <div class="archive">
+  <div class="archive text-box">
     <p class="title">これまでに添削した相談</p>
   </div>
 </div>
