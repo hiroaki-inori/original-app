@@ -13,7 +13,6 @@ class User < ApplicationRecord
     validates :gender_id
     validates :occupation_id
     validates :gender_id
-    validates :prof_image
     validates :pr
   end
 
@@ -24,8 +23,8 @@ class User < ApplicationRecord
   end
 
   has_one_attached :prof_image, dependent: :destroy
-  has_many :questions, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :questions
+  has_many :comments
   has_many :comment_likes
   belongs_to :age
   belongs_to :gender

@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 2021_05_19_070053) do
     t.integer "age_id", null: false
     t.integer "gender_id", null: false
     t.integer "occupation_id", null: false
-    t.string "position", null: false
     t.text "pr", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

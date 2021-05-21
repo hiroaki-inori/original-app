@@ -96,6 +96,9 @@ h2{
   padding: 30px 40px;
   margin: 30px auto;
 }
+.box h2{
+  margin-bottom: 30px;
+}
 
 /* 基本入力フォーム */
 .field{
@@ -103,6 +106,7 @@ h2{
   margin-bottom: 10px;
   width: 100%;
   align-items: baseline;
+  text-align: left;
 }
 .label{
   background: #FAEBD7;
@@ -116,6 +120,48 @@ h2{
 }
 .form{
   width: calc(100% - 200px);
+  display: flex;
+  align-items: flex-start;
+}
+.indispensable{
+  color: white;
+  background-color: red;
+  padding: 4px;
+  margin: 3px 8px;
+  font-size: 75%;
+}
+.submit{
+  text-align: center;
+  margin: 30px auto 0px;
+}
+.submit-btn{
+  width: 200px;
+  color: #fff;
+  background: cornflowerblue;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+}
+
+/* 質問投稿ボタン */
+#new-question{
+  display: block;
+  background: #DD0000;
+  color: white;
+  width: 300px;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+#new-question:hover{
+  background: blue;
+}
+#question-table{
+  width: 800px;
+  display: flex;
+  justify-content: start;
+  flex-wrap:wrap;
+  margin: 20px auto;
 }
 
 /* === ヘッダー ========================================== */
@@ -129,8 +175,9 @@ header{
 header a{
   color:#DD0000;
 }
-.nav ul{
+.nav ul, li{
   display: flex;
+  align-items: center;
 }
 .nav ul .login, .sign-up, .logout{
   background: #DD0000;
@@ -139,11 +186,25 @@ header a{
   border-radius: 3px;
   font-weight: bold;
 }
-.nav li a .login, .sign-up, .logout{
+.nav li .login, .sign-up, .logout{
   color: white;
 }
 .nav li .user-nickname{
   color:#DD0000;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+.nav li .user-nickname:hover{
+  text-decoration: underline;
+}
+.nav li .user-prof_image{
+  width:30px;
+	height:30px;
+	object-fit:cover;
+	border-radius:50%;
+  object-position:50% 10%;
+  margin-right: 8px;
 }
 
 

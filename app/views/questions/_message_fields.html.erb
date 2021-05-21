@@ -1,5 +1,7 @@
-<div>
-<%= f.collection_select(:who_id, Who.all, :id, :name, {}) %>
-<%= f.text_area :sentence %>
-<%= link_to_remove_association "削除", f %>
+<div class="nested-fields">
+  <div class="message_fields">
+    <%= f.collection_select(:who_id, Who.all, :id, :name, {}) %>
+    <%= f.text_area :sentence, class:"f_mailarea" %>
+    <div class="delete"><%= link_to_remove_association "削除", f %></div>
+  </div>
 </div>

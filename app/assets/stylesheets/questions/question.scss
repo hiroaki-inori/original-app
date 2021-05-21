@@ -1,23 +1,8 @@
-/* 質問投稿画面(new.html) */
-#new-question{
-  display: block;
-  background: #DD0000;
-  color: white;
-  width: 300px;
-  padding: 10px;
-  margin: 0 auto;
-  border-radius: 8px;
-}
-#new-question:hover{
-  background: blue;
-}
-#question-table{
-  width: 800px;
-  display: flex;
-  justify-content: start;
-  flex-wrap:wrap;
-  margin: 20px auto;
-  /* background: #ccc; */
+/* ==========================================
+質問投稿画面(new.html)
+========================================== */
+#question{
+  width: 650px;
 }
 
 #question-table .item{
@@ -37,7 +22,73 @@
   border-radius: 7px;
 }
 
-/* 添削画面(show.html) */
+.f_qtitle{
+  width: calc(100% - 200px);
+  height: 45px;
+}
+
+.f_qoutline{
+  width: calc(100% - 200px);
+  height: 140px;
+}
+.line{
+  align-items: flex-start;
+}
+.line-form{
+  display: flex;
+  flex-flow: column;
+}
+.nested-fields{
+  width: 100%;
+}
+.message_fields{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.f_mailarea{
+  width: calc(100% - 110px);
+  height: 50px;
+  margin: 0px 5px;
+}
+.delete a{
+  display: block;
+  width: 50px;
+  background: grey;
+  color: #fff;
+  padding: 3px;
+  margin: 0 auto;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.delete a:hover{
+  background-color: #333;
+}
+.add{
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.add a{
+  background: #DD0000;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+.add a:hover{
+  background: blue;
+}
+
+
+/* ==========================================
+添削画面(show.html)
+========================================== */
+
 #q-tensaku{
   display: flex;
   width: 1030px;

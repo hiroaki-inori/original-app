@@ -6,7 +6,14 @@
   <div class='nav'>
     <ul>
       <% if user_signed_in? %>
-      <li><%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: "user-nickname" %></li>
+      <li>
+        <% if current_user.prof_image.attached? %>
+          <%= image_tag current_user.prof_image, class:"user-prof_image" %>
+        <% else %>
+          <%= image_tag 'prof-no-image.png', class:"user-prof_image" %>
+        <% end %>
+        <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: "user-nickname" %>
+      </li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>

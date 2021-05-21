@@ -2,27 +2,9 @@
 #devise{
   width: 600px;
 }
-#devise h2{
-  text-align: center;
-}
-#devise .indispensable{
-  color: white;
-  background-color: red;
-  padding: 4px;
-  margin: 3px 8px;
-  font-size: 75%;
-}
-#devise .submit{
-  text-align: center;
-  margin: 30px auto 0px;
-}
-#devise .submit-btn{
-  width: 200px;
-  color: #fff;
-  background: cornflowerblue;
-  padding: 10px;
-  border: none;
-  font-weight: bold;
+.pass-form{
+  display: flex;
+  flex-flow: column;
 }
 .f_form{
   width: 100%;
@@ -37,10 +19,17 @@
   padding: 4px;
 }
 .minimam_pass{
+  display: block;
   font-size: 11px;
+  margin-top: 4px;
+  font-style: italic;
+  color: brown;
 }
 .click-upload{
   width: calc(100% - 200px);
   text-align: left;
   padding-bottom: 15px;
+}
+.click-upload .text{
+  margin-bottom: 10px;
 }

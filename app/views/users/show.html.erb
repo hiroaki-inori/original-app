@@ -2,10 +2,14 @@
   <h2 class="under-line">ユーザー情報</h2>
   <div class="prof-top">
     <div class="image">
-      <%= image_tag @user.prof_image %>
+      <% if @user.prof_image.attached? %>
+        <%= image_tag @user.prof_image %>
+      <% else %>
+        <%= image_tag 'prof-no-image.png' %>
+      <% end %>
     </div>
     <div class="text">
-      <p class="position"><%= @user.position %></p>
+      <p class="position">肩書き</p>
       <p>ニックネーム：<%= @user.nickname %></p>
       <p>年齢：<%= @user.age[:name] %></p>
       <p>性別：<%= @user.gender[:name] %></p>

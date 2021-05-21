@@ -4,7 +4,13 @@
       <%= @question.title %>
     </div>
     <div class="user">
-      <p><%= image_tag @question.user.prof_image %></p>
+      <p>
+      <% if @question.user.prof_image.attached? %>
+        <%= image_tag @question.user.prof_image %>
+      <% else %>
+        <%= image_tag 'prof-no-image.png' %>
+      <% end %>        
+      </p>
       <p>相談者：<%= @question.user.nickname %>さん</p>
       <% if user_signed_in? && current_user.id == @question.user_id %>
       相談内容を編集する
@@ -27,8 +33,12 @@
     <p class="headline">みんなの添削コメント</p>
     <div id="comments">
       <% @comments.reverse_each do |comment| %>
-      <p>
+      <p>      
+      <% if comment.user.prof_image.attached? %>
         <%= image_tag comment.user.prof_image %> <%= comment.text %>
+      <% else %>
+        <%= image_tag 'prof-no-image.png' %> <%= comment.text %>
+      <% end %>
         <span id="comment_<%= comment.id %>">
           <%= render 'comment_likes/comment_like', comment: comment %>
         </span>

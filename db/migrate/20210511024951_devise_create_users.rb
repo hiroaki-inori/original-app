@@ -7,7 +7,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.integer :age_id,         null: false
       t.integer :gender_id,      null: false
       t.integer :occupation_id,  null: false
-      t.string  :position,       null: false
       t.text    :pr,             null: false
 
       ## Database authenticatable

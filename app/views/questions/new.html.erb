@@ -1,36 +1,54 @@
-<div id="question">
+<div id="question" class="box">
   <h2>添削希望メッセージの投稿</h2>
     <%= form_with model: @question, url: questions_path, local: true do |f| %>
       <div class="field">
-        <label class="form-text">相談タイトル</label>
-        <%= f.text_area :title, autofocus: true %>
+        <div class="label">
+          <label class="form-text">相談タイトル</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :title, autofocus: true, class:"f_qtitle" %>
       </div>
 
       <div class="field">
-        <label class="form-text">相談したいジャンル</label>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
+        <div class="label">
+          <label class="form-text">相談したいジャンル</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="form"><%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %></div>
       </div>
 
       <div class="field">
-        <label class="form-text">相談したい内容</label>
-        <%= f.text_area :outline, autofocus: true %>
+        <div class="label">
+          <label class="form-text">相談したい内容</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :outline, autofocus: true, class:"f_qoutline" %>
       </div>
 
       <!-- LINE文入力フィールド -->
-      <%= f.fields_for :messages do |t| %>
-      <%= render "message_fields", f: t %>
-      <% end %>
+      <div class="field line">
+        <div class="label">
+          <label class="form-text">現在進行中の文面</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="form line-form">
+          <%= f.fields_for :messages do |t| %>
+            <%= render "message_fields", f: t %>
+          <% end %>
 
-      <!-- 追加する場所 -->
-      <div id="detail-association-insertion-point"></div>
+          <!-- 追加する場所 -->
+          <div id="detail-association-insertion-point"></div>
 
-      <!-- 追加ボタン -->
-      <%= link_to_add_association "追加", f, :messages, 
-          data: {
-          association_insertion_node: '#detail-association-insertion-point',
-          association_insertion_method: 'before'
-          } %>
-
+          <!-- 追加ボタン -->
+          <div class="add">
+            <%= link_to_add_association "追加", f, :messages, 
+                data: {
+                association_insertion_node: '#detail-association-insertion-point',
+                association_insertion_method: 'before'
+                } %>
+          </div>
+        </div>
+      </div>
       <div class="submit">
         <%= f.submit "送信", class:"submit-btn" %>
       </div>
