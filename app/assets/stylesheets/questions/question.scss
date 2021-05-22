@@ -5,22 +5,7 @@
   width: 650px;
 }
 
-#question-table .item{
-  background-image: image-url("nayami.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-  width: 250px;
-  height: 250px;
-  text-align: left;
-  padding: 5px;
-  margin: 0 8px;
-}
-#question-table .item .title{
-  background: #FFFFCC;
-  padding: 8px;
-  border-radius: 7px;
-}
+
 
 .f_qtitle{
   width: calc(100% - 200px);
@@ -89,61 +74,244 @@
 添削画面(show.html)
 ========================================== */
 
+/* === 全体構造 ================= */
+
 #q-tensaku{
   display: flex;
-  width: 1030px;
-  margin: 20px auto;
+  justify-content: space-between;
+  width: 1050px;
 }
 #q-tensaku .column-left{
-  width:250px;
-  background: #eee;
+  width:470px;
+}
+#q-tensaku .column-right{
+  width: 470px;
+}
+
+/* 見出し */
+#q-tensaku .headline{
+  color: white;
+  background: #DD0000;
+  padding: 7px;
+}
+
+/* === カラム左 ================= */
+
+#q-tensaku .top-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 #q-tensaku .title{
+  position: relative;
+  display: inline-block;
+  margin: 0 0 0px 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #FFF;
+  border: solid 3px #555;
+  box-sizing: border-box;
   text-align: left;
-  margin-bottom: 10px;
+}
+#q-tensaku .title:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-right: 12px solid #FFF;
+  z-index: 2;
+}
+#q-tensaku .title:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-right: 14px solid #555;
+  z-index: 1;
 }
 #q-tensaku .user{
-  text-align: center;
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+#q-tensaku .user-name{
+  color: #999;
+  font-size: 12px;
+  text-align: right;
+  margin-top: 5px;
 }
 #q-tensaku .user img{
-	width:170px;
-	height:170px;
+	width:85px;
+	height:85px;
 	object-fit:cover;
 	border-radius:50%;
   object-position:50% 10%;
 }
+
+
+
 #q-tensaku .outline{
   text-align: left;
+  margin-bottom: 10px;
+  padding: 10px;
 }
-#q-tensaku .column-center{
-  width:450px;
-  background-image: image-url("line_bg.jpeg");
-  margin: 0 15px 0 15px;
-}
+
 #q-tensaku .sentence{
   margin: 0 auto;
-  padding: 15px;
+  padding: 25px 15px 15px 15px;
   text-align: center;
+  background-image: image-url("line_bg.jpeg");
 }
-#q-tensaku .sentence-1{
-  background: white;
-  padding: 8px;
-  border-radius: 8px;
-  width: 300px;
-  color:blue;
+
+
+/* 自分のメッセージ */
+
+.sentence-1 {
+  width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.sentence-1 .faceicon {
+  float: right;
+  margin-left: -20px;
+  width: 40px;
+}
+
+.sentence-1 .faceicon img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.sentence-1 .chatting {
+  width: 100%;
   text-align: left;
-  margin:0 auto 20px auto;
 }
-#q-tensaku .sentence-2{
-  color:red;
-  background: white;
+.sentence-1 .says {
+  float: right;
+  display: inline-block;
+  position: relative; 
+  margin-right: 30px;
   padding: 8px;
-  border-radius: 8px;
-  width: 300px;
-  text-align: right;
-  margin:0 auto 20px auto;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 15px;
 }
-#q-tensaku .column-right{
-  width: 300px;
-  background: #999;
+
+.sentence-1 .says:after {
+  content: "";
+  position: absolute;
+  top: 3px; 
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+.sentence-1 .says p {
+  margin: 0;
+  padding: 0;
+}
+.sentence-1 .who{
+  color: #fff;
+  font-size:13px;
+  text-align: right;
+  margin-right: 55px;
+  margin-bottom: 2px;
+}
+
+
+/* 相手のメッセージ */
+
+.sentence-2 {
+  width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.sentence-2 .faceicon {
+  float: left;
+  margin-right: -50px;
+  width: 40px;
+}
+
+.sentence-2 .faceicon img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.sentence-2 .chatting {
+  width: 100%;
+  text-align: left;
+}
+.sentence-2 .says {
+  display: inline-block;
+  position: relative; 
+  margin: 0 0 0 50px;
+  padding: 10px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #edf1ee;
+}
+
+.sentence-2 .says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px; 
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #edf1ee;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+.sentence-2 .says p {
+  margin: 0;
+  padding: 0;
+}
+.sentence-2 .who{
+  color:#fff;
+  font-size:13px;
+  text-align: left;
+  margin-left: 55px;
+  margin-bottom: 2px;
+}
+
+
+.tensaku-point{
+  font-size: 105%;
+  font-weight: bold;
+  color:blue;
+}
+.sentence-1-margin{
+  margin-top: 20px;
+}
+
+/* === カラム右 ================= */
+
+.minna-tensaku{
+  position: relative;
+}
+.comment-link{
+  position: absolute;
+  font-size: 13px;
+  right: 5px;
+  padding: 3px;
+}
+.comment-link a{
+  background: #FFC0CB;
+  padding: 5px 15px;
+  border-radius: 4px;
+}
+.comment-link a:hover{
+  background: #FF6347;
 }

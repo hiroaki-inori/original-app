@@ -1,6 +1,5 @@
 #comments{
-  overflow: auto;
-  height: 310px;
+  padding: 10px;
 }
 #comments p{
   display: flex;
@@ -20,12 +19,13 @@
   margin-right: 10px;
 }
 #comment-submit{
+  display: block;
   width: 100%;
   margin-top: 10px;
 }
 .comment-text{
   width: 100%;
-  height: 65px;
+  height: 75px;
 }
 .comment-btn{
   display: flex;
@@ -33,7 +33,7 @@
   justify-content: center;
   width: 180px;
   text-align: center;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 .comment-flag-icon{
   margin-right: 8px;
