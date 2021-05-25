@@ -23,18 +23,25 @@
 
     <p class="headline">相談概要</p>
     <div class="outline">
-      <%= @question.outline %>
+      <input id='leer' type="checkbox"/>
+      <label for="leer"></label>
+      <div class="expand">
+        <span class='content'>
+          <%= @question.outline %>
+        </span>
+      </div>
     </div>
 
+    <div id="scroll">
     <p class="headline">LINE・メールの現状</p>
-    <div class="sentence">
+    <div class="sentence">    
       <% @messages.each do |message| %>
         <div class="sentence-<%= message.who_id %>">
           <div class="faceicon">
             <img src="/assets/sentence-<%= message.who_id %>.png">
           </div>
           <div class="chatting">
-            <p class="who"><%= message.who[:name] %></p>              
+            <p class="who"><%= message.who[:name] %></p>
             <div class="says">
               <p><%= message.sentence %></p>
             </div>  
@@ -46,23 +53,33 @@
             <img src="/assets/sentence-1.png">
           </div>
           <div class="chatting">
-            <div class="says">
-              <p class="tensaku-point">ココの文章を考えてください!!</p>
+            <p class="who">自分</p>
+            <div class="says advice">
+              <p class="tensaku-point keyframe animation">ココの文章のアドバイスをください!!</p>
             </div>  
           </div>
         </div>
     </div>
-  </div>
+    </div>
+  </div> 
   <div class="column-right">
     <p class="headline minna-tensaku">
-      <span>みんなのコメント</span>
-      <span class="comment-link"><%= link_to "コメントする", anchor: "comment-submit" %></span>
+      <span>みんなのアドバイス</span>
+      <span class="comment-link"><%= link_to "アドバイスを送る", anchor: "comment-submit" %></span>
     </p>
     <div id="comments">
-      <% @comments.reverse_each do |comment| %>
+      <% @comments.each do |comment| %>
       <div class="comment">
-        <p class="name"><%= comment.id %>: <%= link_to "#{comment.user.nickname}さん", user_path(comment.user.id) %> <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-        <p class="text"><%= comment.text %></p>
+        <p class="name">
+        <%= @comment_num += 1 %>: <%= link_to "#{comment.user.nickname}さん", user_path(comment.user.id) %>
+        <% if comment.user.like_point >= 5 %><span class="legend-icon">レジェンドティーチャー</span><% end %>
+        <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+        </p>
+        <% if comment.user.like_point >= 5 %>
+          <p class="text legend-text"><%= comment.text %></p>
+        <% else %>
+          <p class="text"><%= comment.text %></p>
+        <% end %>
         <div class="like">       
           <span id="comment_<%= comment.id %>">
             <%= render 'comment_likes/comment_like', comment: comment %>

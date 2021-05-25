@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
-    # @users = @question.users.includes(:user)
+    @users = User.all
   end
 
   def new
@@ -25,6 +25,7 @@ class QuestionsController < ApplicationController
     @messages = @question.messages.includes(:question)
     @comments = @question.comments.includes(:user)
     @comment = Comment.new
+    @comment_num = 0
   end
 
   def edit

@@ -1,15 +1,40 @@
 <div id="main">
   <div id ="intro" class="container">
-    <h2>サイトについて</h2>
-    <p>このアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリは</p>
+    <div class="bgImg src1"></div>
+    <div class="boxString">
+      <h2>サイトについて</h2>
+      <p>このアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリは</p>
+    </div>
   </div>
   <div id ="use" class="container">
     <h2>使い方</h2>
     <p>このアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリは</p>
   </div>
+  <div id ="legend" class="container">
+    <h2>Legend Teacher</h2>
+    <p>相談内容の評価が高いユーザーの方々です</p>
+      <div id="legend-teachers">
+        <% @users.each do |user| %>
+          <% if user.like_point >= 5 %>
+            <%= link_to (user_path(user.id)) do %>
+            <div class="member">
+              <p>
+                <% if user.prof_image.attached? %>
+                  <%= image_tag user.prof_image %>
+                <% else %>
+                  <%= image_tag 'prof-no-image.png' %>
+                <% end %>
+              </p>            
+              <p><%= user.nickname %></p>
+            </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
   <div id ="show" class="container">
     <h2>投稿一覧</h2>
-    <%= link_to 'メッセージを添削してもらう', new_question_path, id:"new-question" %>
+    <%= link_to 'メッセージの相談をする', new_question_path, id:"new-question" %>
     <div id="question-table">
       <% @questions.reverse_each do |question| %>
         <%= link_to (question_path(question.id)) do %>

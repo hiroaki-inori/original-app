@@ -1,15 +1,7 @@
-<% if current_user.liked_by?(comment.id) %>
-  <span>
-    <%= link_to destroy_comment_like_path(comment), class: "like-link", method: :DELETE, remote: true do %>
-      <i class="fa fa-heart unlike-btn"></i>
-      <%= comment.comment_likes.count %>
-    <% end %>
-  </span>
-<% else %>
+
   <span>
     <%= link_to create_comment_like_path(comment), class: "like-link", method: :POST, remote: true do %>
-      <i class="fa fa-heart like-btn"></i>
+      <i class="fa fa-heart like-btn1"></i>
       <%= comment.comment_likes.count %>
     <% end %>
   </span>
-<% end %>

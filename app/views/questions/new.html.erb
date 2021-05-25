@@ -1,5 +1,5 @@
 <div id="question" class="box">
-  <h2>添削希望メッセージの投稿</h2>
+  <h2>相談したい内容を投稿</h2>
     <%= form_with model: @question, url: questions_path, local: true do |f| %>
       <div class="field">
         <div class="label">
@@ -19,7 +19,7 @@
 
       <div class="field">
         <div class="label">
-          <label class="form-text">相談したい内容</label>
+          <label class="form-text">相談概要</label>
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :outline, autofocus: true, class:"f_qoutline" %>

@@ -9,12 +9,16 @@
       <% end %>
     </div>
     <div class="text">
-      <p class="position">肩書き</p>
+      <p class="position">
+          <% if @user.like_point >= 5 %>
+            <p class="legend-icon">レジェンドティーチャー</p>
+          <% end %>
+      </p>
       <p>ニックネーム：<%= @user.nickname %></p>
       <p>年齢：<%= @user.age[:name] %></p>
       <p>性別：<%= @user.gender[:name] %></p>
       <p>職業：<%= @user.occupation[:name] %></p>
-      <p>獲得ポイント：<%= @like_count %> pt</p>
+      <p>TP：<%= @user.like_point %> pt</p>
     </div>
   </div>
   <div class="pr text-box">

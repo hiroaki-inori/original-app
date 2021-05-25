@@ -1,3 +1,5 @@
+/* コメント欄 */
+
 .comment{
   text-align: left;
   padding: 25px 5px;
@@ -12,8 +14,28 @@
   color:#666;
   margin-bottom: 10px;
 }
+.comment .name a{
+  color:#666;
+}
+.comment .name a:hover{
+  text-decoration: underline;
+}
+.name .legend-icon{
+  display: inline;
+  font-size:12px;
+  height: 28px;
+  padding-left: 16px;
+  background-size: 14px;
+  background-position: 0px center;
+  margin-right: 5px;
+}
 .comment .text{
   font-size: 16px;
+  margin-bottom: 10px;
+}
+.comment .legend-text{
+  color: blue;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 .comment .like{
