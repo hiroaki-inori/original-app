@@ -2,24 +2,26 @@
   <div class="column-left">
     <div class="top-info">
       <div class="user">
-      <p>
-      <% if @question.user.prof_image.attached? %>
-        <%= image_tag @question.user.prof_image %>
-      <% else %>
-        <%= image_tag 'prof-no-image.png' %>
-      <% end %>        
-      </p>
-      
-      <%# <% if user_signed_in? && current_user.id == @question.user_id %>
-      <%# 相談内容を編集する %>
-      <%# <% end %>
-      
+        <p>
+          <% if @question.user.prof_image.attached? %>
+            <%= image_tag @question.user.prof_image %>
+          <% else %>
+            <%= image_tag 'prof-no-image.png' %>
+          <% end %>        
+        </p>
       </div>
       <div class="title">
-      <%= @question.title %>
-      <p class="user-name">相談者：<%= link_to "#{@question.user.nickname}さん", user_path(@question.user.id) %></p>
+        <%= @question.title %>
+        <p class="user-name">相談者：<%= link_to "#{@question.user.nickname}さん", user_path(@question.user.id) %></p>
       </div>
     </div>
+
+    <% if user_signed_in? && current_user.id == @question.user_id %>
+    <div class="question-edit">
+      <p class="edit"><%= link_to "相談内容を編集する", edit_question_path(@question.id) %></p>
+      <p class="close"><%= link_to "相談を終了する", edit_question_path(@question.id) %></p>
+    </div>
+    <% end %>
 
     <p class="headline">相談概要</p>
     <div class="outline">

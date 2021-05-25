@@ -29,9 +29,19 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @question = Question.find(params[:id])
+    unless current_user.id == @question.user_id
+      redirect_to action: :index
+    end
   end
 
   def update
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      redirect_to question_path
+    else
+      render :edit
+    end
   end
 
 

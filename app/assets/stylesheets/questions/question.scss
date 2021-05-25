@@ -156,12 +156,25 @@
 }
 
 
+/* 投稿内容の編集 */
+.question-edit{
+  display: flex;
+  justify-content: space-around;
+  margin: 12px auto 20px;
+}
+.question-edit p{
+  width: 48%;
+  padding: 5px;
+  border-radius: 4px;
+}
+.question-edit .edit{
+  background-color: #FFC0CB;
+}
+.question-edit .close{
+ background-color: gray;
+}
 
-// #q-tensaku .outline{
-//   text-align: left;
-//   margin-bottom: 10px;
-//   padding: 10px;
-// }
+
 
 /* 続きを読む */
 #q-tensaku .outline {
