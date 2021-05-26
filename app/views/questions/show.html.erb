@@ -94,7 +94,7 @@
     <% if !@question.close %>
     <div id="comment-submit">
       <%= form_with(model: [@question, @comment], local: true) do |f| %>
-      <%= render 'shared/error_messages', model: f.object %>
+        <%= render 'shared/error_messages', model: f.object %>
         <%= f.text_area :text, class:"comment-text" %>
         <button type="submit" class="comment-btn">
           <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
