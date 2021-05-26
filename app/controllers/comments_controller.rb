@@ -12,6 +12,8 @@ class CommentsController < ApplicationController
       @question = @comment.question
       @comments = @question.comments.includes(:user)
       @messages = @question.messages.includes(:question)
+      @comment_num = 0
+      render "/questions/show"
     end
 
   end
