@@ -421,3 +421,12 @@ input[type=checkbox]:checked ~ .expand:before {
 .comment-link a:hover{
   background: #FF6347;
 }
+
+
+/* === 終了した相談 ================= */
+.close-message{
+  color: #DD0000;
+  font-weight: bold;
+  margin-top: 50px;
+  font-size: 28px;
+}

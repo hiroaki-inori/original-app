@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    # @user = @comment.user
     @comment = Comment.create(comment_params)
     if @comment.save
       redirect_to question_path(@comment.question)
@@ -13,11 +12,8 @@ class CommentsController < ApplicationController
       @question = @comment.question
       @comments = @question.comments.includes(:user)
       @messages = @question.messages.includes(:question)
-      render "questions/show"
     end
-    # if @comment.save
-    #   ActionCable.server.broadcast 'comment_channel', comment: @comment, user: @user
-    # end
+
   end
 
   private

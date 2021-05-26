@@ -1,3 +1,4 @@
+<% if @question.close %><p class="close-message">この相談は終了しました</p><% end %>
 <div id="q-tensaku" class="box">
   <div class="column-left">
     <div class="top-info">
@@ -16,10 +17,10 @@
       </div>
     </div>
 
-    <% if user_signed_in? && current_user.id == @question.user_id %>
+    <% if user_signed_in? && current_user.id == @question.user_id && !@question.close %>
     <div class="question-edit">
       <p class="edit"><%= link_to "相談内容を編集する", edit_question_path(@question.id) %></p>
-      <p class="close"><%= link_to "相談を終了する", edit_question_path(@question.id) %></p>
+      <p class="close"><%= link_to "相談を終了する", close_question_path(@question.id), data: { confirm: "【確認】相談を終了してもいいですか？" } %></p>
     </div>
     <% end %>
 
@@ -67,7 +68,7 @@
   <div class="column-right">
     <p class="headline minna-tensaku">
       <span>みんなのアドバイス</span>
-      <span class="comment-link"><%= link_to "アドバイスを送る", anchor: "comment-submit" %></span>
+      <% unless @question.close %><span class="comment-link"><%= link_to "アドバイスを送る", anchor: "comment-submit" %></span><% end %>
     </p>
     <div id="comments">
       <% @comments.each do |comment| %>
@@ -90,14 +91,17 @@
       </div>
       <% end %>
     </div>
+    <% if !@question.close %>
     <div id="comment-submit">
       <%= form_with(model: [@question, @comment], local: true) do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
         <%= f.text_area :text, class:"comment-text" %>
         <button type="submit" class="comment-btn">
           <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
           <span>コメントする<span>
         </button>
-      <% end %>
+      <% end %>      
     </div>
+    <% end %>
   </div>
 </div>

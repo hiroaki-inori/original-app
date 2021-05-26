@@ -18,7 +18,11 @@
       <p>年齢：<%= @user.age[:name] %></p>
       <p>性別：<%= @user.gender[:name] %></p>
       <p>職業：<%= @user.occupation[:name] %></p>
-      <p>TP：<%= @user.like_point %> pt</p>
+      <p>AP：<%= @user.like_point %> pt
+        <% if user_signed_in? && @user.id == current_user.id %>
+          <%= link_to 'ポイントを商品と交換する', "#", class:"pt-change" %>
+        <% end %>
+      </p>
     </div>
   </div>
   <div class="pr text-box">
@@ -29,7 +33,7 @@
     <p class="title">現在相談中の内容</p>
   </div>
   <div class="archive text-box">
-    <p class="title">これまでに添削した相談</p>
+    <p class="title">これまでにアドバイスした相談</p>
   </div>
 </div>
 
