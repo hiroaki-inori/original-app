@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        pr: 自己紹介
+        age_id: 年齢
+        gender_id: 性別
+        occupation_id: 職業
+      question:
+        title: 相談タイトル
+        category_id: 相談したいジャンル
+        outline: 相談内容
+        text: コメント
+      question/messages:
+        sentence: 現在進行中の文面
+      comment:
+        text: コメント

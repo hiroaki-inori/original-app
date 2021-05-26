@@ -463,11 +463,47 @@ footer .copy{
   background-repeat: no-repeat;
   background-position: 0px center;
 }
+
+/* === エラーメッセージ ========================================== */
+
+/* 新規登録のエラーメッセージ */
+#error_explanation{
+  color: red;
+  width: 330px;
+  margin: 0px auto 30px auto;
+  text-align: left;
+}
+#error_explanation li{
+  line-height: 120%;
+  margin-bottom: 13px;
+}
+
+/* ログイン画面のエラーメッセージ */
+.login-flash-message{
+  color: red;
+  width: 330px;
+  margin: 0px auto 30px auto;
+}
+
 .error-alert{
   width: 280px;
   color: red;
-  margin: 0 auto 30px;
-  text-align: center;
+  margin: 0 auto 30px auto;
+}
+.error-alert li{
+  margin: 10px;
+}
+
+/* コメント欄のエラーメッセージ */
+#comment-submit .error-alert{
+  text-align: right;
+}
+
+
+/* 相談質問欄のエラーメッセージ */
+#question .error-alert{
+  width: 360px;
+  text-align: left;
 }
 
 /* === introの背景画像アニメーション ========================================== */
