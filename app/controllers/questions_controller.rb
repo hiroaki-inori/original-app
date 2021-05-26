@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :show]
 
   def index
     @questions = Question.all
@@ -59,6 +59,14 @@ class QuestionsController < ApplicationController
   private
   def question_params
     params.require(:question).permit(:title, :category_id, :outline, messages_attributes:[:id, :who_id, :sentence, :_destroy]).merge(user_id: current_user.id)
+  end
+
+  def comment_count
+    comment_num = 0
+
+    @comments.each do |i|
+      comment_num += 1
+    end
   end
 
 end

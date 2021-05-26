@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    member do
+      get 'del'
+    end
+  end
 
   post 'comment_like/:id' => 'comment_likes#create', as: 'create_comment_like'
   delete 'comment_like/:id' => 'comment_likes#destroy', as: 'destroy_comment_like'
