@@ -1,14 +1,72 @@
 <div id="main">
-  <div id ="intro" class="container">
-    <div class="bgImg src1"></div>
-    <div class="boxString">
-      <h2>サイトについて</h2>
-      <p>このアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリは</p>
+  <div id="intro">
+    <div class="intro-message">
+      <h2>どんなメッセージを返したらいいか<br/>迷ってませんか？</h2>
+      <p>このアプリでは、メッセージの返信に困っているあなたをお助けします。</p>
+      <ul>
+        <li>「マッチングアプリでやりとり中のお相手を誘いたい」</li>
+        <li>「営業メールで相手先に好印象を与えたい」</li>
+        <li>「先輩の怒りを納めるにはどう謝ればいいのか」</li>
+      </ul>
+      <p>そんな悩めるあなた、いますぐみんなに相談しましょう</p>
     </div>
+    <ul class="image-anime">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
   </div>
-  <div id ="use" class="container">
-    <h2>使い方</h2>
-    <p>このアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリはこのアプリは</p>
+  <div id ="use1" class="container">
+    <h2>相談に乗ってほしいあなたへ</h2>
+      <div class="use-left use">
+        <h3><span class="num">01</span>悩んだらまず相談</h3>
+        <div class="text">メール＆メッセージに関する悩み事がある場合は<br/>ページ下の【メッセージ相談】からお悩みの内容を<br/>投稿しましょう</div>
+        <div class="image"><%= image_tag 'use1-1.png' %></div>
+      </div>
+      <div class="use-right use">
+        <h3><span class="num">02</span>アドバイスを受けよう</h3>
+        <div class="image"><%= image_tag 'use1-2.png' %></div>
+        <div class="text">相談一覧の自分のお悩みをクリック！<br/>他のユーザーさんたちがお悩みに答えてくれます<br/><br/>
+        【レジェンドティーチャー】と記されているユーザーさんはお悩み相談の達人です。ためになる回答をしてくれているので積極的に耳を傾けましょう</div>
+      </div>
+      <div class="use-left use">
+        <h3><span class="num">03</span>ためになる回答には積極的に「いいね！」ボタンをクリック</h3>
+        <div class="text">参考になる回答をしてくれたユーザーさんにはお礼の気持ちをこめて<i class="fa fa-heart like-btn1"></i>ボタンをクリック<br/>
+        モチベーションにもつながるので積極的にクリックしてあげましょう</div>
+        <div class="image"><%= image_tag 'use1-3.png' %></div>
+      </div>
+      <div class="use-right use">
+        <h3><span class="num">04</span>お悩みが解決できたら<br/>お礼を言って相談を終了</h3>
+        <div class="image"><%= image_tag 'use1-4.png' %></div>
+        <div class="text">たくさんのアドバイスを参考にして問題が解決できたら、最後は【相談を終了する】をクリック<br>
+        その前にメッセージボードに、アドバイスをくれた皆さんに向けて「ありがとうございました」とお礼の一言を書き込みましょう！</div>
+      </div>
+  </div>
+  <div id ="use2" class="container">
+      <h2>相談に乗ってくれるあなたへ</h2>
+      <div class="use-left use">
+        <h3><span class="num">01</span>相談に乗ってあげたいお悩みを見つけて答えてあげよう</h3>
+        <div class="text">ページ下の相談一覧から、気になる相談内容をクリック。<br/>相談内容をきっちり読んで、メッセージフォームからアドバイスを送ってあげましょう</div>
+        <div class="image"><%= image_tag 'use2-1.png' %></div>
+      </div>
+      <div class="use-right use">
+        <h3><span class="num">02</span>アドバイス回答に「いいね！」を貰おう！</h3>
+        <div class="image"><%= image_tag 'use2-2.png' %></div>
+        <div class="text">
+          ためになる素敵な回答をすると、他のユーザーさんから「いいね！」をもらう事ができます。<br/>
+          「いいね！」をたくさんもらうと【レジェンドティーチャー】の称号が貰えます。<br/>
+          そしたらあなたは立派なお悩み相談の達人です！
+        </div>
+      </div>
+      <div class="use-left use">
+        <h3><span class="num">03</span>「いいね！」をたくさん貰って賞品と交換しよう！</h3>
+        <div class="text">
+          「いいね！」を１つ貰うごとに、アドバイスポイント(AP)が1ポイント貯まります。<br/>
+          APを貯めるごとに素敵な賞品と交換できます。
+          たくさん相談に答えて素敵な賞品をGETしましょう！</div>
+        <div class="image"><%= image_tag 'use2-3.png' %></div>
+      </div>      
   </div>
   <div id ="legend" class="container">
     <h2>Legend Teacher</h2>
@@ -33,17 +91,35 @@
       </div>
   </div>
   <div id ="show" class="container">
-    <h2>投稿一覧</h2>
+    <h2>相談一覧</h2>
     <%= link_to 'メッセージの相談をする', new_question_path, id:"new-question" %>
     <div id="question-table">
       <% @questions.reverse_each do |question| %>
         <%= link_to (question_path(question.id)) do %>
+          <% unless question.close %>
           <div class="post">
             <p class="title"><%= question.title %></p>
             <p class="category category-<%= question.category_id %>"><%= question.category[:name] %></p>
           </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
+   <div id="closed">
+    <h2>終了した相談</h2>
+    <div id="question-table">
+      <% @questions.reverse_each do |question| %>
+        <%= link_to (question_path(question.id)) do %>
+          <% if question.close %>
+          <div class="post">
+            <p class="title"><%= question.title %></p>
+            <p class="category category-<%= question.category_id %>"><%= question.category[:name] %></p>
+          </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+   </div>
+
   </div>
 </div>

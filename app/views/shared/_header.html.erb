@@ -1,7 +1,7 @@
 <header>
   <div class="header-left">
     <p>あなたのLINEやメールをみんなでアドバイス！</p>
-    <h1><%= link_to 'Message Teacher（仮）', root_path %></h1>
+    <h1><%= link_to 'Message Teacher', root_path %></h1>
   </div>
   <div class='nav'>
     <ul>
@@ -14,8 +14,17 @@
         <% end %>
         <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: "user-nickname" %>
       </li>
+      <li><%= link_to 'メッセージの相談をする', new_question_path, class: "btn" %></li>
+      <li>
+        <% if current_page?(root_path) %>
+          <%= link_to '相談一覧', "#show", class: "btn" %>
+        <% else %>
+          <%= link_to '相談一覧', "../../#show", class: "btn" %>
+        <% end %>
+      </li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
+      <%# <li><%= link_to '相談一覧', "index/#show", class: "btn" %></li>
       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
       <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
       <% end %>
