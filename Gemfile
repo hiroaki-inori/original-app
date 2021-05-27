@@ -78,3 +78,6 @@ gem 'rails-i18n'
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+# S3
+gem "aws-sdk-s3", require: false
