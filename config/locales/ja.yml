@@ -10,7 +10,7 @@ ja:
       question:
         title: 相談タイトル
         category_id: 相談したいジャンル
-        outline: 相談内容
+        outline: 相談概要
         text: コメント
       question/messages:
         sentence: 現在進行中の文面
