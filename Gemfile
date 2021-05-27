@@ -69,3 +69,9 @@ gem 'font-awesome-sass'
 
 # エラーメッセージの日本語化
 gem 'rails-i18n'
+
+# Google ,facebokk認証
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth', '~>1.9.1'
