@@ -69,3 +69,7 @@ gem 'font-awesome-sass'
 
 # エラーメッセージの日本語化
 gem 'rails-i18n'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
