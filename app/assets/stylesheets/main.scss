@@ -531,20 +531,20 @@ footer .copy{
   animation: anime 40s linear 0s infinite ;
 }
 .image-anime li:nth-child(1) { 
-  background-image: url(top_image1.jpg)   /* 背景画像を入力して下さい */
+  background-image: image-url("/images/top_image1.jpg");
 }
 .image-anime li:nth-child(2) {
-  background-image: url(top_image2.jpg);
+  background-image: image-url("top_image2.jpg");
   -webkit-animation-delay: 10s;
   animation-delay: 10s;
 }
 .image-anime li:nth-child(3) {
-  background-image: url(top_image3.jpg);
+  background-image: image-url("top_image3.jpg");
   -webkit-animation-delay: 20s;
   animation-delay: 20s;
 }
 .image-anime li:nth-child(4) {
-  background-image: url(top_image4.jpg);
+  background-image: image-url("top_image4.jpg");
   -webkit-animation-delay: 30s;
   animation-delay: 30s;
 }
