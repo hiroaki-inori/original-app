@@ -1,5 +1,6 @@
 # README
 
+![トップイメージ画像](https://github.com/hiroaki-inori/original-app/blob/master/top-image.png?raw=true)
 
 ## アプリケーション名
 Message Teacher
