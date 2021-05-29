@@ -58,7 +58,7 @@ http://18.180.137.107/
 ## DEMO & 工夫したポイント
 
 ### 【トップページ】
-[![Image from Gyazo](https://i.gyazo.com/5b70db1f97080e90e2a7c05fa3348f24.gif)](https://gyazo.com/5b70db1f97080e90e2a7c05fa3348f24)
+[![Image from Gyazo](https://i.gyazo.com/c7a885fa18a0c262d3c74865d1b3f227.gif)](https://gyazo.com/c7a885fa18a0c262d3c74865d1b3f227)
 
 #### コンテンツ
 - タイトル
