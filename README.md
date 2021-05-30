@@ -18,6 +18,10 @@ Message Teacher
 ### URL
 http://18.180.137.107/
 
+### Basic認証(ID/Pass)
+- ID: admin
+- Pass: 2222
+
 ### テスト用アカウント
 - メールアドレス：test@test.com
 - パスワード：a123456
