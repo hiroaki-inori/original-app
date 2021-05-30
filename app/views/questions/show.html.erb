@@ -41,7 +41,7 @@
       <% @messages.each do |message| %>
         <div class="sentence-<%= message.who_id %>">
           <div class="faceicon">
-            <img src="/assets/sentence-<%= message.who_id %>.png">
+            <img src="/images/sentence-<%= message.who_id %>.png">
           </div>
           <div class="chatting">
             <p class="who"><%= message.who[:name] %></p>
@@ -53,7 +53,7 @@
       <% end %>
         <div class="sentence-1 sentence-1-margin">
           <div class="faceicon">
-            <img src="/assets/sentence-1.png">
+            <img src="/images/sentence-1.png">
           </div>
           <div class="chatting">
             <p class="who">自分</p>
