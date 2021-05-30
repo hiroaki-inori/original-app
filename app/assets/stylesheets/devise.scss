@@ -33,3 +33,13 @@
 .click-upload .text{
   margin-bottom: 10px;
 }
+#image-list{
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+}
+#image-list img{
+  object-fit: cover;
+  height: 100%;
+}

@@ -35,6 +35,14 @@
 
     <div class="field">
       <div class="label">
+        <label class="form-text">現在のパスワード</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="form"><%= f.password_field :current_password, autocomplete: "current-password" %></div>
+    </div>
+
+    <div class="field">
+      <div class="label">
         <label class="form-text">ニックネーム</label>
         <span class="indispensable">必須</span>
       </div>
@@ -43,14 +51,16 @@
 
     <div class="img-upload">
       <div class="field">
-        <div class="label">プロフィール画像</div>
-        <div id="image-list"></div>
-      <div class="click-upload">
-        <p class="text">
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :prof_image, id:"item-image" %>
-      </div>
+        <div class="img-upload-left">
+          <div class="label">プロフィール画像</div>
+          <div id="image-list"><%= image_tag @user.prof_image %></div>
+        </div>
+        <div class="click-upload">
+          <p class="text">
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :prof_image, id:"item-image" %>
+        </div>
       </div>
     </div>
 
