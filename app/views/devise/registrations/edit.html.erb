@@ -14,35 +14,6 @@
 
     <div class="field">
       <div class="label">
-        <label class="form-text">パスワード</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <div class="form pass-form">
-        <%= f.password_field :password, autocomplete: "new-password", class:"f_form" %>
-        <% if @minimum_password_length %>
-          <span class="minimam_pass">(<%= @minimum_password_length %> 文字以上 ※英字と数字の両方を含めて設定してください)</span>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="field">
-      <div class="label">
-        <label class="form-text">パスワード(確認)</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <div class="form"><%= f.password_field :password_confirmation, autocomplete: "new-password", class:"f_form" %></div>
-    </div>
-
-    <div class="field">
-      <div class="label">
-        <label class="form-text">現在のパスワード</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <div class="form"><%= f.password_field :current_password, autocomplete: "current-password" %></div>
-    </div>
-
-    <div class="field">
-      <div class="label">
         <label class="form-text">ニックネーム</label>
         <span class="indispensable">必須</span>
       </div>
