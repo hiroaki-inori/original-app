@@ -73,3 +73,54 @@
 .back{
   margin-bottom: 30px;
 }
+
+
+/* === 現在相談中の内容 ========================================== */
+.now-question #question-table{
+  width: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap:wrap;
+  margin: 0px auto 0px;
+}
+.now-question #question-table .post{
+  position: relative;
+  background-image: image-url("nayami.jpeg");
+  background-repeat: no-repeat;
+  background-size: 180px;
+  background-position: right bottom;
+  background-color: white;
+  width: 230px;
+  height: 200px;
+  text-align: left;
+  padding: 8px;
+  margin: 0px;
+  border: 3px solid #000;
+}
+
+.now-question #question-table .post .title{
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 7px 10px;
+  width: 100%;
+  max-width: 100%;
+  color: #333;
+  font-size: 14px;
+  line-height: 140%;
+  border: solid 3px #333;
+  box-sizing: border-box;
+  background: #FFFFE0;
+}
+
+/* === これまでにアドバイスした相談 ========================================== */
+.archive li{
+  margin: 0 0 10px 5px;
+}
+.archive-link{
+  font-size:14px;
+  padding-left: 5px;
+}
+.archive-link:hover{
+  text-decoration: underline;
+}

@@ -31,9 +31,28 @@
   </div>
   <div class="now-question text-box">
     <p class="title">現在相談中の内容</p>
+
+      <div id="question-table">
+      <% @my_questions.reverse_each do |question| %>
+        <%= link_to (question_path(question.id)) do %>
+          <% unless question.close %>
+          <div class="post">
+            <p class="title"><%= question.title %></p>
+            <p class="category category-<%= question.category_id %>"><%= question.category[:name] %></p>
+          </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
   <div class="archive text-box">
-    <p class="title">これまでにアドバイスした相談</p>
+    <p class="title">これまでにアドバイスした相談 (<%= @comment_questions_count %>件)</p>
+    <ul>
+    <% @comment_questions.reverse_each do |comment_question| %>
+      <li>■<%= link_to comment_question.title, question_path(comment_question.id), class:"archive-link" %></li>
+    <% end %>
+    </ul>
   </div>
 </div>
 

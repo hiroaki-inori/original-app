@@ -2,8 +2,13 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @questions = Question.all
     @comments = @user.comments.includes(:user)
-    @like_count = CommentLike.where(comment_id: @comments.ids).count
+    # @like_count = CommentLike.where(comment_id: @comments.ids).count
+    @my_questions = @user.questions.includes(:user)
+    @comment_questions = @questions.find(@comments.pluck(:question_id))
+    @comment_questions_count = @comment_questions.count
+    # binding.pry
   end
 
   def edit
@@ -16,21 +21,5 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to root_path
   end
-
-  # def del
-  #   @user = User.find(params[:id])
-  #   @comment = @user.comments.includes(:user)
-  #     num = 0
-  #     @commetn.ids.each do |num|
-
-
-
-  #   @question = @user.questions.includes(:user)
-  #   @comment_likes = @user.comment_likes.includes(:user)
-    
-  #   binding.pry
-  #   # @user.destroy
-  #   redirect_to root_path
-  # end
 
 end
