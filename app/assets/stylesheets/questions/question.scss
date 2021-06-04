@@ -171,7 +171,15 @@
   background-color: #FFC0CB;
 }
 .question-edit .close{
- background-color: gray;
+  font-size: 16px;
+  color: white;
+  width: 48%;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: gray;
+  border: none;
+  cursor: pointer;
+  cursor: hand;
 }
 
 
@@ -422,7 +430,14 @@ input[type=checkbox]:checked ~ .expand:before {
   background: #FF6347;
 }
 
-
+/* === 終了ポップアップウインドウ ========================================== */
+.close-b{
+  display: block;
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+}
 /* === 終了した相談 ================= */
 .close-message{
   color: #DD0000;
