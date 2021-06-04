@@ -20,8 +20,17 @@
     <% if user_signed_in? && current_user.id == @question.user_id && !@question.close %>
     <div class="question-edit">
       <p class="edit"><%= link_to "相談内容を編集する", edit_question_path(@question.id) %></p>
-      <p class="close"><%= link_to "相談を終了する", close_question_path(@question.id), data: { confirm: "【確認】相談を終了してもいいですか？" } %></p>
+      <button id="js-show-popup" class="close">相談を終了する</button>
     </div>
+
+      <div class="popup" id="delete-popup">
+      <div class="popup-inner">
+        <div class="close-btn" id="js-close-btn"><i class="fas fa-times"></i></div>
+          <p>本当に相談を終了しますか？</p>
+          <%= link_to "相談を終了する", close_question_path(@question.id), class:"close-b" %>
+      </div>
+      <div class="black-background" id="js-black-bg"></div>
+      </div>
     <% end %>
 
     <p class="headline">相談概要</p>
