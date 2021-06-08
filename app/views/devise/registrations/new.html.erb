@@ -43,14 +43,16 @@
 
     <div class="img-upload">
       <div class="field">
-        <div class="label">プロフィール画像</div>
-        <div id="image-list"></div>
-      <div class="click-upload">
-        <p class="text">
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :prof_image, id:"item-image" %>
-      </div>
+        <div class="img-upload-left">
+          <div class="label">プロフィール画像</div>
+          <div id="image-list"></div>
+        </div>
+        <div class="click-upload">
+          <p class="text">
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :prof_image, id:"item-image" %>
+        </div>
       </div>
     </div>
 

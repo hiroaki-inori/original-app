@@ -24,7 +24,9 @@
       <div class="field">
         <div class="img-upload-left">
           <div class="label">プロフィール画像</div>
-          <div id="image-list"><%= image_tag @user.prof_image %></div>
+          <div id="image-list">
+            <div><%= image_tag @user.prof_image %></div>
+          </div>
         </div>
         <div class="click-upload">
           <p class="text">
