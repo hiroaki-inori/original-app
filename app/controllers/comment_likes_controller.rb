@@ -7,6 +7,8 @@ class CommentLikesController < ApplicationController
     user_comment_id = Comment.find(comment_id)
     @user = User.find(user_comment_id.user_id)
     @user.increment!(:like_point, 1)
+    question_id = user_comment_id.question_id
+    @question = Question.find(question_id)
   end
 
   def comment_params

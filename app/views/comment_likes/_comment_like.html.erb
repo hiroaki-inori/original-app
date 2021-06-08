@@ -1,5 +1,5 @@
 <span>
-  <% if comment.user_id == current_user.id %>
+  <% if comment.user_id == current_user.id || @question.close %>
       <i class="fa fa-heart like-btn1"></i>
       <%= comment.comment_likes.count %>
   <% else %>

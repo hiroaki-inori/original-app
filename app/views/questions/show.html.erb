@@ -94,7 +94,7 @@
         <% end %>
         <div class="like">       
           <span id="comment_<%= comment.id %>">
-            <%= render 'comment_likes/comment_like', comment: comment %>
+            <%= render 'comment_likes/comment_like', comment: comment, locals: {question: @question} %>
           </span>
         </div>
       </div>
