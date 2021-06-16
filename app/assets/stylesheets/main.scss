@@ -250,11 +250,13 @@ h2{
   margin: 40px auto 20px;
 }
 .member{
+  width: 180px;
   color: #333;
   background: white;
   border-radius: 5px;
   padding: 20px;
   font-size: 18px;
+  margin: 0 10px;
 }
 .member img{
 	width:130px;
@@ -263,6 +265,18 @@ h2{
 	border-radius:50%;
   object-position:50% 10%;
 }
+.swiper{
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 120px 0;
+}
+.swiper-button{
+  background: #eee;
+  display: block;
+  clear: both;
+}
+
+
 
 
 /* === 相談一覧 ========================================== */

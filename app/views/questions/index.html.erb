@@ -71,24 +71,35 @@
   <div id ="legend" class="container">
     <h2>Legend Teacher</h2>
     <p>相談内容の評価が高いユーザーの方々です</p>
-      <div id="legend-teachers">
-        <% @users.each do |user| %>
-          <% if user.like_point >= 5 %>
-            <%= link_to (user_path(user.id)) do %>
-            <div class="member">
-              <p>
-                <% if user.prof_image.attached? %>
-                  <%= image_tag user.prof_image %>
-                <% else %>
-                  <%= image_tag 'prof-no-image.png' %>
-                <% end %>
-              </p>            
-              <p><%= user.nickname %></p>
-            </div>
+  <div class="swiper">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <% @users.each do |user| %>
+            <% if user.like_point >= 5 %>
+              <div class="swiper-slide">
+              <%= link_to (user_path(user.id)) do %>
+                <div class="member">
+                  <p>
+                    <% if user.prof_image.attached? %>
+                      <%= image_tag user.prof_image %>
+                    <% else %>
+                      <%= image_tag 'prof-no-image.png' %>
+                    <% end %>
+                  </p>            
+                  <p><%= user.nickname %></p>
+                </div>
+              <% end %>
+              </div>
             <% end %>
           <% end %>
-        <% end %>
+        </div>
+        <div class="swiper-button">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       </div>
+  </div>
+
   </div>
   <div id ="show" class="container">
     <h2>相談一覧</h2>
@@ -123,3 +134,33 @@
 
   </div>
 </div>
+
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: 6,
+    spaceBetween: 15,
+    centeredSlides : true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 3400,
+    },
+    breakpoints: {
+      1100: {
+        slidesPerView: 5,
+        spaceBetween: 10
+      },
+      770: {
+        slidesPerView: 4,
+        spaceBetween: 10
+      },
+      606: {
+        slidesPerView: 2,
+        spaceBetween: 10
+      }
+    }
+  });
+</script>
