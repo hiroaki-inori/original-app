@@ -257,6 +257,7 @@ h2{
   padding: 20px;
   font-size: 18px;
   margin: 0 10px;
+  box-shadow: 0 0 10px gray;
 }
 .member img{
 	width:130px;
@@ -264,6 +265,7 @@ h2{
 	object-fit:cover;
 	border-radius:50%;
   object-position:50% 10%;
+  border: 1px solid #eee;
 }
 .swiper{
   display: flex;
