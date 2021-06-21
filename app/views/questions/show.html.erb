@@ -81,7 +81,25 @@
     </p>
     <div id="comments">
       <% @comments.each do |comment| %>
-
+<% if comment.user_id == @question.user_id %>
+          <div class="comment user-comment">
+            <p class="name">
+            <%= @comment_num += 1 %>: <%= link_to "#{comment.user.nickname}さん(相談者)", user_path(comment.user.id) %>
+            <% if comment.user.like_point >= 5 %><span class="legend-icon">レジェンドティーチャー</span><% end %>
+            <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+            </p>
+              <div class="user-comment-text">
+                <p class="user-comment-image">
+                  <% if @question.user.prof_image.attached? %>
+                    <%= image_tag @question.user.prof_image %>
+                  <% else %>
+                    <%= image_tag 'prof-no-image.png' %>
+                  <% end %>        
+                </p>
+                <p class="text"><%= comment.text %></p>
+              </div>
+          </div>
+<% else %>
           <div class="comment">
             <p class="name">
             <%= @comment_num += 1 %>: <%= link_to "#{comment.user.nickname}さん", user_path(comment.user.id) %>
@@ -99,7 +117,7 @@
               </span>
             </div>
           </div>
-
+<% end %>
       <% end %>
     </div>
     <% if user_signed_in? && !@question.close %>
