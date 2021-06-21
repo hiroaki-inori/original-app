@@ -1,11 +1,16 @@
 <span>
-  <% if comment.user_id == current_user.id || @question.close || current_user.liked_by?(comment.id) %>
-      <i class="fa fa-heart like-btn1"></i>
-      <%= comment.comment_likes.count %>
-  <% else %>
-    <%= link_to create_comment_like_path(comment), class: "like-link", method: :POST, remote: true do %>
-      <i class="fa fa-heart like-btn1"></i>
-      <%= comment.comment_likes.count %>
+  <% if user_signed_in? %>
+    <% if comment.user_id == current_user.id || @question.close || current_user.liked_by?(comment.id) %>
+        <i class="fa fa-heart like-btn1"></i>
+        <%= comment.comment_likes.count %>
+    <% else %>
+      <%= link_to create_comment_like_path(comment), class: "like-link", method: :POST, remote: true do %>
+        <i class="fa fa-heart like-btn1"></i>
+        <%= comment.comment_likes.count %>
+      <% end %>
     <% end %>
+  <% else %>
+    <i class="fa fa-heart like-btn1"></i>
+    <%= comment.comment_likes.count %>
   <% end %>
 </span>

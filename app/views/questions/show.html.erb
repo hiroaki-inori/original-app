@@ -81,26 +81,28 @@
     </p>
     <div id="comments">
       <% @comments.each do |comment| %>
-      <div class="comment">
-        <p class="name">
-        <%= @comment_num += 1 %>: <%= link_to "#{comment.user.nickname}さん", user_path(comment.user.id) %>
-        <% if comment.user.like_point >= 5 %><span class="legend-icon">レジェンドティーチャー</span><% end %>
-        <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
-        </p>
-        <% if comment.user.like_point >= 5 %>
-          <p class="text legend-text"><%= comment.text %></p>
-        <% else %>
-          <p class="text"><%= comment.text %></p>
-        <% end %>
-        <div class="like">       
-          <span id="comment_<%= comment.id %>">
-            <%= render 'comment_likes/comment_like', comment: comment, locals: {question: @question} %>
-          </span>
-        </div>
-      </div>
+
+          <div class="comment">
+            <p class="name">
+            <%= @comment_num += 1 %>: <%= link_to "#{comment.user.nickname}さん", user_path(comment.user.id) %>
+            <% if comment.user.like_point >= 5 %><span class="legend-icon">レジェンドティーチャー</span><% end %>
+            <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+            </p>
+            <% if comment.user.like_point >= 5 %>
+              <p class="text legend-text"><%= comment.text %></p>
+            <% else %>
+              <p class="text"><%= comment.text %></p>
+            <% end %>
+            <div class="like">       
+              <span id="comment_<%= comment.id %>">
+                <%= render 'comment_likes/comment_like', comment: comment, locals: {question: @question} %>
+              </span>
+            </div>
+          </div>
+
       <% end %>
     </div>
-    <% if !@question.close %>
+    <% if user_signed_in? && !@question.close %>
     <div id="comment-submit">
       <%= form_with(model: [@question, @comment], local: true) do |f| %>
         <%= render 'shared/error_messages', model: f.object %>
