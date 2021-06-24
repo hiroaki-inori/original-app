@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
     @users = User.all
+    @comment = Comment.includes(:question_id)
   end
 
   def new

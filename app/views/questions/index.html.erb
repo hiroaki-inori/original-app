@@ -111,6 +111,10 @@
           <div class="post">
             <p class="title"><%= question.title %></p>
             <p class="category category-<%= question.category_id %>"><%= question.category[:name] %></p>
+            <p class="comment-icon">
+              <i class="fas fa-comment-dots fa-fw fa-lg"></i>
+              <%= question.comments.count %>
+            </p>
           </div>
           <% end %>
         <% end %>
@@ -125,6 +129,10 @@
           <div class="post">
             <p class="title"><%= question.title %></p>
             <p class="category category-<%= question.category_id %>"><%= question.category[:name] %></p>
+            <p class="comment-icon">
+              <i class="fas fa-comment-dots fa-fw fa-lg"></i>
+              <%= question.comments.count %>
+            </p>
           </div>
           <% end %>
         <% end %>
