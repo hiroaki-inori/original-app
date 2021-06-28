@@ -18,9 +18,10 @@
       <p>年齢：<%= @user.age[:name] %></p>
       <p>性別：<%= @user.gender[:name] %></p>
       <p>職業：<%= @user.occupation[:name] %></p>
-      <p>AP：<%= @user.like_point %> pt
+      <p>AP：<%= @user.like_point %> pt</p>
+      <p>        
         <% if user_signed_in? && @user.id == current_user.id %>
-          <%= link_to 'ポイントを商品と交換する', "#", class:"pt-change" %>
+          <%= link_to 'ポイントを商品と交換する', change_user_path(current_user.id), class:"pt-change" %>
         <% end %>
       </p>
     </div>
