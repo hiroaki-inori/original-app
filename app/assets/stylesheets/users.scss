@@ -29,7 +29,17 @@
   object-position:50% 10%;
 }
 #user-prof .prof-top .pt-change{
-  margin-left: 15px;
+  display: block;
+  width: 200px;
+  font-size: 85%;
+  margin-top: 10px;
+  color: white;
+  background: blue;
+  border-radius: 10px;
+  padding: 7px 15px;
+}
+#user-prof .prof-top .pt-change:hover{
+  background: red;
 }
 
 
@@ -107,7 +117,7 @@
   height: 200px;
   text-align: left;
   padding: 8px;
-  margin: 0px 15px;
+  margin: 0px 15px 15px 15px;
   border: 3px solid #000;
 }
 
@@ -203,4 +213,71 @@
   font-size: 20px;
   font-weight: bold;
   color: red;
+}
+
+/* === 賞品交換一覧 ========================================== */
+#change{
+  width: 900px;
+}
+.my-point{
+  font-size:20px;
+  margin-bottom: 50px;
+}
+.my-point .nickname, .my-point .point{
+  font-size:130%;
+  color: blue;
+  padding: 0 3px;
+}
+.back{
+  display: block;
+  margin-bottom: 50px;
+}
+.item{
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+.item img{
+  width: 250px;
+  height: 100%;
+  object-fit: cover;
+}
+.item .image{
+  height: 200px;
+  margin-right: 20px;
+}
+.item dl{
+  display:flex;
+  flex-wrap: wrap;
+  border: 1px solid #ccc;
+  border-top: none;
+  margin: 0px 0px 30px 0px;
+}
+.item dt{
+  background: #ddd;
+  width: 30%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-top: 1px solid #ccc; 
+}
+.item dd{
+  padding: 10px;
+  margin: 0;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc; 
+  width: 70%;
+  background: #fff;
+  box-sizing: border-box;
+  text-align: left;
+}
+.item .change-point{
+  width: 100%;
+  padding-top: 10px;
+  background: #DD0000;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+}
+.item .change-point a{
+  color: white;
 }

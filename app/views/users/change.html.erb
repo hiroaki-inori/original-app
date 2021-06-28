@@ -1,0 +1,50 @@
+<div id="change" class="box">
+  <h2>賞品交換一覧</h2>
+  <p class="my-point">
+    <span class="nickname"><%= @user.nickname %></span>さんは現在<span class="point"><%= @user.like_point %></span>ポイント保有しています。
+  </p>
+  <div class="item">
+    <div class="image"><%= image_tag 'change_niku.png' %></div>
+    <dl>
+      <dt>商品名</dt>
+      <dd>焼肉セット(500g)</dd>
+      <dt>商品説明</dt>
+      <dd>厳しい基準をクリアし、最高ランクに格付けされた仙台牛の焼肉詰め合わせ</dd>
+      <dt>交換ポイント</dt>
+      <dd>3000ポイント</dd>
+      <dd class="change-point">
+        <%= link_to '商品交換申請をする', "#" %>
+      </dd>
+    </dl>
+  </div>
+  <div class="item">
+    <div class="image"><%= image_tag 'change_amazon.png' %></div>
+    <dl>
+      <dt>商品名</dt>
+      <dd>Amazonギフトカード</dd>
+      <dt>商品説明</dt>
+      <dd>通販サイトAmazonで使用できるギフトカード1000円分</dd>
+      <dt>交換ポイント</dt>
+      <dd>1000ポイント</dd>
+      <dd class="change-point">
+        <%= link_to '商品交換申請をする', "#" %>
+      </dd>
+    </dl>
+  </div>
+  <div class="item">
+    <div class="image"><%= image_tag 'change_toilet.png' %></div>
+    <dl>
+      <dt>商品名</dt>
+      <dd>トイレットペーパー</dd>
+      <dt>商品説明</dt>
+      <dd>肌に優しいふわふわのトイレットペーパー(一ヶ月分)</dd>
+      <dt>交換ポイント</dt>
+      <dd>500ポイント</dd>
+      <dd class="change-point">
+        <%= link_to '商品交換申請をする', "#" %>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<%= link_to '戻る', :back, class:"back" %>

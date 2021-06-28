@@ -20,4 +20,8 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def change
+    @user = User.find(params[:id])  
+  end
+
 end
