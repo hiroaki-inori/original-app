@@ -611,3 +611,39 @@ footer .copy{
   }
   100% { opacity: 0 }
 }
+
+
+/* === ページトップに戻るスクロールボタン ========================================== */
+
+#page_top{
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background:#FF6633;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 80px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 50px;
+  color: #fff;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
