@@ -430,6 +430,17 @@ input[type=checkbox]:checked ~ .expand:before {
 .comment-link a:hover{
   background: #FF6347;
 }
+.comment-login{
+  display: block;
+  color: white;
+  background: blue;
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+}
+.comment-login:hover{
+  background: black;
+}
 
 /* === 終了ポップアップウインドウ ========================================== */
 .close-b{

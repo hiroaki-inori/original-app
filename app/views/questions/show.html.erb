@@ -77,7 +77,7 @@
   <div class="column-right">
     <p class="headline minna-tensaku">
       <span>みんなのアドバイス</span>
-      <% unless @question.close %><span class="comment-link"><%= link_to "アドバイスを送る", anchor: "comment-submit" %></span><% end %>
+      <% if user_signed_in? && !@question.close %><span class="comment-link"><%= link_to "アドバイスを送る", anchor: "comment-submit" %></span><% end %>
     </p>
     <div id="comments">
       <% @comments.each do |comment| %>
@@ -129,8 +129,11 @@
           <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
           <span>コメントする<span>
         </button>
-      <% end %>      
+      <% end %> 
     </div>
+    <% end %>
+    <% if !user_signed_in? && !@question.close %>
+      <%= link_to "コメントする", new_user_session_path, class:"comment-login" %>
     <% end %>
   </div>
 </div>
