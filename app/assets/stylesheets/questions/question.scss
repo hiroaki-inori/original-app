@@ -290,7 +290,7 @@ input[type=checkbox]:checked ~ .expand:before {
 }
 .sentence-1 .says {
   float: right;
-  display: inline-block;
+  // display: inline-block;
   position: relative; 
   margin-right: 30px;
   padding: 8px;
@@ -437,6 +437,7 @@ input[type=checkbox]:checked ~ .expand:before {
   width: 100%;
   padding: 8px;
   border-radius: 5px;
+  margin-top: 10px;
 }
 .comment-login:hover{
   background: black;
