@@ -1,0 +1,55 @@
+<div id="search" class="container">
+  <%= form_with(url: search_questions_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "相談内容を検索する", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
+  <% end %>
+
+  <p class="search-result"><span class="keyword">【<%= @keyword %>】</span>の検索結果</p>
+
+  <% if @questions.empty? %>
+    一致する検索結果はありませんでした
+  <% end %>
+
+  <div id="question-table">
+    <% @questions.reverse_each do |question| %>
+      <%= link_to (question_path(question.id)) do %>
+        <% unless question.close %>
+        <div class="post">
+          <p class="title"><%= question.title %></p>
+          <p class="category category-<%= question.category_id %>"><%= question.category[:name] %></p>
+          <p class="comment-icon">
+            <i class="fas fa-comment-dots fa-fw fa-lg"></i>
+            <%= question.comments.count %>
+          </p>
+        </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="closed">
+    <% @questions.each do |question| %>
+      <% if question.close %>
+        <h2 class="close">終了した相談</h2>
+      <% end %>
+    <% end %>
+    <div id="question-table">
+      <% @questions.reverse_each do |question| %>
+        <%= link_to (question_path(question.id)) do %>
+          <% if question.close %>
+          <div class="post">
+            <p class="title"><%= question.title %></p>
+            <p class="category category-<%= question.category_id %>"><%= question.category[:name] %></p>
+            <p class="comment-icon">
+              <i class="fas fa-comment-dots fa-fw fa-lg"></i>
+              <%= question.comments.count %>
+            </p>
+          </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= link_to '戻る', :back, class:"back" %>
+</div>
