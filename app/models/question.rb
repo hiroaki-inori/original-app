@@ -14,4 +14,12 @@ class Question < ApplicationRecord
     validates :category_id
     validates :outline
   end
+
+  def self.search(search)
+    if search != ""
+      Question.where('title LIKE(?)', "%#{search}%")
+    else
+      Question.all
+    end
+  end
 end

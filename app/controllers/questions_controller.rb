@@ -45,15 +45,16 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def close_btn
-
-  end
-
   def close
     question = Question.find(params[:id])
     question.close = true
     question.save
     redirect_to root_path
+  end
+
+  def search
+    @questions = Question.search(params[:keyword])
+    @keyword = params[:keyword]
   end
 
 
