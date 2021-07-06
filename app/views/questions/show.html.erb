@@ -1,6 +1,7 @@
 <% if @question.close %><p class="close-message">この相談は終了しました</p><% end %>
 <div id="q-tensaku" class="box">
   <div class="column-left">
+    <p class="question-create-date">投稿日時：<%= @question.created_at.strftime('%Y/%m/%d %H:%M') %></p>
     <div class="top-info">
       <div class="user">
         <p>
@@ -133,7 +134,7 @@
     </div>
     <% end %>
     <% if !user_signed_in? && !@question.close %>
-      <%= link_to "コメントする", new_user_session_path, class:"comment-login" %>
+      <%= link_to "ログインしてコメントする", new_user_session_path, class:"comment-login" %>
     <% end %>
   </div>
 </div>
