@@ -450,6 +450,16 @@ input[type=checkbox]:checked ~ .expand:before {
 .comment-login:hover{
   background: black;
 }
+.comment-icon{
+  font-size:12px;
+  text-align: right;
+  color: cadetblue;
+  margin-bottom: 8px;
+}
+.no-comment{
+  height: 300px;
+  padding-top: 30px;
+}
 
 /* === 終了ポップアップウインドウ ========================================== */
 .close-b{

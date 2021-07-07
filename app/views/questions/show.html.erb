@@ -80,6 +80,14 @@
       <span>みんなのアドバイス</span>
       <% if user_signed_in? && !@question.close %><span class="comment-link"><%= link_to "アドバイスを送る", anchor: "comment-submit" %></span><% end %>
     </p>
+    <% if @question.comments.count > 0 %>
+      <p class="comment-icon">
+        <i class="fas fa-comment-dots fa-fw fa-lg"></i>
+        <%= @question.comments.count %>コメント
+      </p>
+    <% else %>
+      <p class="no-comment">※まだコメントはありません</p>
+    <% end %>
     <div id="comments">
       <% @comments.each do |comment| %>
 <% if comment.user_id == @question.user_id %>
