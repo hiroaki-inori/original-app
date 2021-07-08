@@ -461,6 +461,15 @@ input[type=checkbox]:checked ~ .expand:before {
   padding-top: 30px;
 }
 
+/* 参考になった */
+.sankou{
+  position: relative;
+  background-image: image-url("sankou.png");
+  background-repeat: no-repeat;
+  background-size: 55px;
+  background-position: 413px 5px;
+}
+
 /* === 終了ポップアップウインドウ ========================================== */
 .close-b{
   display: block;

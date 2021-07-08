@@ -90,7 +90,7 @@
     <% end %>
     <div id="comments">
       <% @comments.each do |comment| %>
-<% if comment.user_id == @question.user_id %>
+        <% if comment.user_id == @question.user_id %>
           <div class="comment user-comment">
             <p class="name">
             <%= @comment_num += 1 %>: <%= link_to "#{comment.user.nickname}さん(相談者)", user_path(comment.user.id) %>
@@ -108,7 +108,7 @@
                 <p class="text"><%= comment.text %></p>
               </div>
           </div>
-<% else %>
+        <% else %>
           <div class="comment">
             <p class="name">
             <%= @comment_num += 1 %>: <%= link_to "#{comment.user.nickname}さん", user_path(comment.user.id) %>
@@ -126,7 +126,7 @@
               </span>
             </div>
           </div>
-<% end %>
+        <% end %>
       <% end %>
     </div>
     <% if user_signed_in? && !@question.close %>
