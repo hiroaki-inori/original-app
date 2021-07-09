@@ -5,4 +5,13 @@ $(function() {
     $(this).removeAttr('placeholder');
   });
 
+  // ユーザー情報のアコーディオンメニュー
+  $('.user-info').hover(
+    function(){
+      $('.list').stop().slideDown();
+    },
+    function(){
+      $('.list').slideUp();
+  });
+
 });

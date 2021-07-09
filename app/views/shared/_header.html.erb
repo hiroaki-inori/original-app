@@ -4,29 +4,35 @@
     <h1><%= link_to 'Message Teacher', root_path %></h1>
   </div>
   <div class='nav'>
-    <ul>
+    <% if user_signed_in? %>
+      <ul class="user-info">
+          <span class="name">
+            <% if current_user.prof_image.attached? %>
+              <%= image_tag current_user.prof_image, class:"user-prof_image" %>
+            <% else %>
+              <%= image_tag 'prof-no-image.png', class:"user-prof_image" %>
+            <% end %>
+            <%= current_user.nickname %><span class="san">さん</span>
+          </span>
+        <ul class="menu-list">
+          <li class="list"><%= link_to "ユーザー情報ページ", user_path(current_user.id) %></li>
+        </ul>
+      </ul>
+    <% end %>
+    <ul class="login">
       <% if user_signed_in? %>
-      <li>
-        <% if current_user.prof_image.attached? %>
-          <%= image_tag current_user.prof_image, class:"user-prof_image" %>
-        <% else %>
-          <%= image_tag 'prof-no-image.png', class:"user-prof_image" %>
-        <% end %>
-        <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: "user-nickname" %>
-      </li>
-      <li><%= link_to 'メッセージの相談をする', new_question_path, class: "btn" %></li>
-      <li>
-        <% if current_page?(root_path) %>
-          <%= link_to '相談一覧', "#show", class: "btn" %>
-        <% else %>
-          <%= link_to '相談一覧', "../../#show", class: "btn" %>
-        <% end %>
-      </li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <li><%= link_to 'メッセージの相談をする', new_question_path, class: "btn" %></li>
+        <li>
+          <% if current_page?(root_path) %>
+            <%= link_to '相談一覧', "#show", class: "btn" %>
+          <% else %>
+            <%= link_to '相談一覧', "../../#show", class: "btn" %>
+          <% end %>
+        </li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
-      <%# <li><%= link_to '相談一覧', "index/#show", class: "btn" %></li>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
       <% end %>
     </ul>
   </div>

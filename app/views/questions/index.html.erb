@@ -105,10 +105,10 @@
     <h2>相談一覧</h2>
     <%= link_to 'メッセージの相談をする', new_question_path, id:"new-question" %>
 
-    <%= form_with(url: search_questions_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "相談内容を検索する", class: "search-input" %>
-      <%= form.submit "検索", class: "search-btn" %>
-    <% end %>
+      <%= form_with(url: search_questions_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "相談内容を検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
 
     <div id="question-table">
       <% @questions.reverse_each do |question| %>
