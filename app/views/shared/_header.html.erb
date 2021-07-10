@@ -24,7 +24,7 @@
         <li><%= link_to 'メッセージの相談をする', new_question_path, class: "btn" %></li>
         <li>
           <% if current_page?(root_path) %>
-            <%= link_to '相談一覧', "#show", class: "btn" %>
+            <%= link_to '相談一覧', "#show", class: "btn", id: "show-btn" %>
           <% else %>
             <%= link_to '相談一覧', "../../#show", class: "btn" %>
           <% end %>
