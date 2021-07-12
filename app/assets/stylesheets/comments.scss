@@ -32,11 +32,13 @@
 .comment .text{
   font-size: 16px;
   margin-bottom: 10px;
+  white-space: pre-wrap;
 }
 .comment .legend-text{
   color: blue;
   font-size: 20px;
   margin-bottom: 10px;
+  white-space: pre-wrap;
 }
 .comment .like{
   text-align: right;

@@ -36,11 +36,20 @@ $(function() {
   //「相談一覧」へスクロール移動
   $('#show-btn').on('click', function(){
     var id = $(this).attr('href');
-    // console.log(id);
     var position = $(id).offset().top;
     $('html, body').animate({
       'scrollTop': position
     }, 500);
   });
+
+  // メール文章の内容を取得
+  if($('.comment-text').length){
+    $('.says').on('click', function(){
+      var text = $(this).text();
+      var res = $.trim(text);
+      $('.comment-text').val(">>" + res + "\n");
+    });
+  }
+
 
 });
