@@ -47,9 +47,28 @@ $(function() {
     $('.says').on('click', function(){
       var text = $(this).text();
       var res = $.trim(text);
-      $('.comment-text').val(">>" + res + "\n");
+      $('.comment-text').val(">>" + res + "\n\n");
     });
   }
+
+  // コメント文の内容を取得して引用する
+  if($('.comment .text').length){
+    $('.text').on('click', function(){
+      var commentText = $(this).text();
+      var commentRes = $.trim(commentText);
+      $('.comment-text').val(">>" + commentRes + "\n\n");
+    });
+  }
+
+  // コメント欄の改行
+  $('.text').each(function(){
+    var txt = $(this).html();
+    $(this).html(txt.replace(/\n/g, '<br>'));
+  });  
+
+  // $('.text').html().replace(/\n/g, '<br>');
+  // $('.text').css("font-size", "10px");
+  // $('p').css("color","red");
 
 
 });
