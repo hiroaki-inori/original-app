@@ -61,14 +61,10 @@ $(function() {
   }
 
   // コメント欄の改行
-  $('.text').each(function(){
+  $('.comment .text').each(function(){
     var txt = $(this).html();
     $(this).html(txt.replace(/\n/g, '<br>'));
   });  
-
-  // $('.text').html().replace(/\n/g, '<br>');
-  // $('.text').css("font-size", "10px");
-  // $('p').css("color","red");
 
 
 });
