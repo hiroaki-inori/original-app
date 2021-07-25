@@ -788,6 +788,7 @@ footer .copy{
   background-repeat: no-repeat;
   background-position: bottom 10px left 2px;
   z-index: 999;
+  border-radius: 0px 15px 15px 0px;
 }
 #soudan-scroll a{
   position: relative;
@@ -796,4 +797,11 @@ footer .copy{
   height: 180px;
   text-decoration: none;
   color: white;
+}
+#soudan-scroll:hover{
+  background: skyblue;
+  background-image: image-url("soudan.png");
+  background-repeat: no-repeat;
+  background-position: bottom 10px left 2px;
+  z-index: 999;
 }
