@@ -1,0 +1,123 @@
+@media screen and (max-width:480px) {
+ 
+body{
+  max-width: 480px;
+}
+
+h2{
+  font-size: 24px;
+}
+
+/* === ヘッダー ========================================== */
+
+header{
+  display: block;
+  padding: 10px 15px;
+}
+
+.header-left{
+  text-align: center;
+  margin: 10px 0;
+}
+.nav{
+  display: block;
+}
+.nav .user-info{
+  margin-bottom: 10px;
+}
+.nav ul .btn{
+  padding: 3px 10px;
+  margin-left: 8px;
+  color: white;
+  font-size:13px;
+}
+.nav ul .login, .sign-up, .logout{
+  padding: 3px 10px;
+  margin-left: 8px;
+  font-size: 13px;
+}
+
+
+#intro{
+  position: static;
+  background: black;
+  padding: 8px 8px 25px 8px;
+}
+#intro .image-anime{
+  display: none;
+}
+#intro h2{
+  color: white;
+  font-size: 24px;
+  line-height: 130%;
+  text-shadow: 0 0 8px gray;
+  margin-bottom: 30px;
+}
+#intro .intro-message{
+  position: static;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: left;
+  width: 100%;
+  text-shadow: 0 0 8px gray;
+}
+#intro .intro-message ul{
+  margin: 15px 0px 15px 0px;
+}
+#intro .intro-message li{
+  margin-bottom: 8px;
+}
+
+.use{
+  margin: 0px 0px 20px 0px;
+  padding: 0 10px;
+}
+.use .image{
+  width: 30%;
+  max-height: 130px;
+  padding: 0 5px;
+}
+.use img{
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.use-right h3{
+  justify-content: start;
+}
+.use h3{
+  font-size: 20px;
+}
+.use .text{
+  width: 70%;
+  font-size: 14px;
+  line-height: 160%;
+}
+
+
+#question-table{
+  width: 100%;
+  display: block;
+  margin: 60px auto 50px;
+}
+
+/* 相談一覧ボタン */
+#question-table .post{
+  margin: 0 auto 20px auto;
+}
+
+.search-form .search-input{
+  width: calc(100% - 90px);
+  margin: 0px;
+}
+
+.search-form .search-btn {
+  width: 60px;
+}
+.search-form input[type="submit"] {
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+
+}

@@ -43,17 +43,19 @@ $(function() {
   });
 
   //一定の位置まできたら相談ボタン表示
-  if($('.soudan-btn-show').length){
-    var soudanBtnShow = $('.soudan-btn-show').offset().top;
-  }
-  var soudanScroll = $('#soudan-scroll');
-  $(window).scroll(function(){
-    if($(window).scrollTop() > soudanBtnShow){
-      soudanScroll.fadeIn();
-    }else{
-      soudanScroll.fadeOut();
+  if(window.matchMedia('(min-width: 480px)').matches){
+    if($('.soudan-btn-show').length){
+      var soudanBtnShow = $('.soudan-btn-show').offset().top;
     }
-  });  
+    var soudanScroll = $('#soudan-scroll');
+    $(window).scroll(function(){
+      if($(window).scrollTop() > soudanBtnShow){
+        soudanScroll.fadeIn();
+      }else{
+        soudanScroll.fadeOut();
+      }
+    });  
+  }
 
   // メール文章の内容を取得
   if($('.comment-text').length){
