@@ -8,6 +8,16 @@ h2{
   font-size: 24px;
 }
 
+/* 基本ボックス */
+.box{
+  background-color: white;
+  padding: 10px;
+  margin: 10px 7px 20px 7px;
+}
+.box h2{
+  margin-bottom: 30px;
+}
+
 /* === ヘッダー ========================================== */
 
 header{
@@ -37,6 +47,8 @@ header{
   font-size: 13px;
 }
 
+
+/* === トップページ ========================================== */
 
 #intro{
   position: static;
@@ -119,5 +131,46 @@ header{
   font-size: 18px;
 }
 
+/* === ユーザー情報ページ ========================================== */
+
+#user-prof{
+  width: calc(100% - 14px) !important;
+}
+#user-prof h2{
+  text-align: center;
+  width: initial;
+  margin: 0 auto 30px auto;
+}
+#user-prof .prof-top .legend-icon{
+  font-size:16px;
+  margin-bottom: 10px;
+}
+#user-prof .prof-top .text{
+  width: calc(100% - 120px) !important;
+}
+#user-prof .prof-top .image img{
+	width:100px !important;
+	height:100px !important;
+	object-fit:cover;
+	border-radius:50%;
+  object-position:50% 10%;
+}
+
+/* === 賞品交換一覧 ========================================== */
+#change{
+  width: auto !important;
+}
+.change-br::before {
+  content: "\A";
+  white-space: pre;
+}
+.item{
+  display: block !important;
+  font-size: 13px;
+}
+.item .image{
+  margin: 0 0 20px 0;
+  clear: both;
+}
 
 }
