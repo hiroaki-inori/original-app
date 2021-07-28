@@ -155,6 +155,15 @@ header{
 	border-radius:50%;
   object-position:50% 10%;
 }
+.user-info .suma{
+  display: flex;
+  align-items: center;
+  color:#DD0000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px;
+  margin-right: 10px;
+}
 
 /* === 賞品交換一覧 ========================================== */
 #change{

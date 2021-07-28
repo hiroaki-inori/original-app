@@ -6,13 +6,18 @@ $(function() {
   });
 
   // ユーザー情報のアコーディオンメニュー
-  $('.user-info').hover(
-    function(){
-      $('.list').stop().slideDown();
-    },
-    function(){
-      $('.list').slideUp();
-  });
+  if(window.matchMedia('(max-width: 480px)').matches){
+    $('.user-info .name').remove();
+    $('.user-info .suma').show();
+  }else{
+    $('.user-info').hover(
+      function(){
+        $('.list').stop().slideDown();
+      },
+      function(){
+        $('.list').slideUp();
+    });
+  }
 
   //ページスクロールでtop移動
   $('#page_top').on('click', function(){
