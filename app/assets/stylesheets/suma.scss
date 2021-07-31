@@ -182,4 +182,33 @@ header{
   clear: both;
 }
 
+/* === 相談投稿一覧 ========================================== */
+#question{
+  width: auto;
+
+  textarea{
+    width: 100%;
+  }
+  .field{
+    display: block;
+
+    .label{
+      margin-bottom: 10px;
+    }
+  }
+  .line-form{
+    width: 100% !important;
+  }
+  .message_fields{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 8px;
+
+  }
+
+}
+
+
+
 }
