@@ -46,7 +46,59 @@ header{
   margin-left: 8px;
   font-size: 13px;
 }
+.nav .login{
+  display: flex;
+  justify-content: center;
+}
 
+/* === ログイン画面 ========================================== */
+#devise{
+  width: auto;
+
+  .img-upload .field{
+    display: flex;
+
+    .img-upload-left{
+      width: 130px;
+
+      .label{
+        width: 130px;
+      }
+      #image-list{
+        padding: 0px;
+        width: 130px;
+
+        img{
+          object-fit: contain;
+          width: 90%;
+          height: 90%;
+        }
+      }
+    }
+    .click-upload{
+      width: calc(100% - 130px);
+      font-size: 12px;
+
+    }
+    #item-image{
+      clear: both;
+    }
+  }
+  .field{
+    display: block;
+
+    .label{
+      margin-bottom: 10px;
+    }
+    .form{
+      width: 100%;
+    }
+    textarea{
+      width: 100%;
+    }
+
+  }
+}
 
 /* === トップページ ========================================== */
 
@@ -256,6 +308,24 @@ header{
     height: 40px;
   }
 }
+
+/* ==========================================
+添削画面(show.html)
+========================================== */
+
+#q-tensaku{
+  display: block;
+  width: auto;
+
+  .column-left, .column-right{
+    width: auto;
+  }
+  .column-left{
+    padding-bottom: 20px;
+  }
+
+}
+
 
 /* ここまで */
 }

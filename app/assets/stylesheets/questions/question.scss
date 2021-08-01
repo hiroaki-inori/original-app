@@ -426,12 +426,13 @@ input[type=checkbox]:checked ~ .expand:before {
   position: relative;
   margin-bottom: 10px;
 }
-
+.come-ad{
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 7px; 
+}
 .comment-link{
-  position: absolute;
   font-size: 13px;
-  right: 5px;
-  padding: 3px;
 }
 .comment-link a{
   background: #FFC0CB;
@@ -460,8 +461,11 @@ input[type=checkbox]:checked ~ .expand:before {
   margin-bottom: 8px;
 }
 .no-comment{
+  display: block;
+  width: 100%;
   height: 300px;
   padding-top: 30px;
+  text-align: center;
 }
 
 /* 参考になった */
