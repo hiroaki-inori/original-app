@@ -112,16 +112,16 @@
 
     <div id="question-table">
       <% @questions.reverse_each do |question| %>
-        <%= link_to (question_path(question.id)) do %>
-          <% unless question.close %>
-          <div class="post">
-            <p class="title"><%= question.title %></p>
-            <p class="category category-<%= question.category_id %>"><%= question.category[:name] %></p>
-            <p class="comment-icon">
-              <i class="fas fa-comment-dots fa-fw fa-lg"></i>
-              <%= question.comments.count %>
-            </p>
-          </div>
+        <% unless question.close %>
+          <%= link_to (question_path(question.id)) do %>
+            <div class="post">
+              <p class="title"><%= question.title %></p>
+              <p class="category category-<%= question.category_id %>"><%= question.category[:name] %></p>
+              <p class="comment-icon">
+                <i class="fas fa-comment-dots fa-fw fa-lg"></i>
+                <%= question.comments.count %>
+              </p>
+            </div>
           <% end %>
         <% end %>
       <% end %>
@@ -130,16 +130,16 @@
     <h2>終了した相談</h2>
     <div id="question-table">
       <% @questions.reverse_each do |question| %>
-        <%= link_to (question_path(question.id)) do %>
-          <% if question.close %>
-          <div class="post">
-            <p class="title"><%= question.title %></p>
-            <p class="category category-<%= question.category_id %>"><%= question.category[:name] %></p>
-            <p class="comment-icon">
-              <i class="fas fa-comment-dots fa-fw fa-lg"></i>
-              <%= question.comments.count %>
-            </p>
-          </div>
+        <% if question.close %>
+          <%= link_to (question_path(question.id)) do %>
+            <div class="post">
+              <p class="title"><%= question.title %></p>
+              <p class="category category-<%= question.category_id %>"><%= question.category[:name] %></p>
+              <p class="comment-icon">
+                <i class="fas fa-comment-dots fa-fw fa-lg"></i>
+                <%= question.comments.count %>
+              </p>
+            </div>
           <% end %>
         <% end %>
       <% end %>
