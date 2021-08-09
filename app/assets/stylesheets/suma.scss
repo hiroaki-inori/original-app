@@ -130,8 +130,8 @@ header{
   text-align: left;
   width: 100%;
   font-weight: bold;
-  text-shadow: 2px 2px 5px rgb(175, 89, 89) !important;
-
+  // text-shadow: 2px 2px 5px rgb(175, 89, 89) !important;
+  text-shadow: 2px 2px 5px #333 !important;
 }
 #intro .intro-message ul{
   margin: 15px 0px 15px 0px;
@@ -187,6 +187,7 @@ header{
   .title{
     font-size: 14px;
     line-height: 120%;
+    padding: 6px;
   }
   .comment-icon{
     height: 14px;
